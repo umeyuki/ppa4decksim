@@ -1,14 +1,16 @@
 /** @jsx React.DOM */
-var React = require('react');
+
+var React = require('react'),
+	Select = require('react-select');
+var DATA = require('./data.jsx');
+
+
+
 
 App = React.createClass({
   getInitialState: function() {
   	return {
-      items: [
-        { text: "Foo" },
-        { text: "Bar" },
-        { text: "Buzz" }
-      ]
+      items: DATA['Members']
     };
   },
 
@@ -16,7 +18,7 @@ App = React.createClass({
     return <div>
       <div>
         {this.state.items.map(function(item) {
-          return <div className="item">{item.text}</div>;
+          return <div className="item">{item.roma}</div>;
         })}
       </div>
     </div>;
