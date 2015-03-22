@@ -5,24 +5,69 @@ var React = require('react'),
 	Select = require('react-select');
 var DATA = require('./data.jsx');
 
+// http://h2ham.net/javascript-random-array
 
+function random(array, num) {
+  var a = array;
+  var t = [];
+  var r = [];
+  var l = a.length;
+  var n = num < l ? num : l;
+  while (n-- > 0) {
+    var i = Math.random() * l | 0;
+    r[n] = t[i] || a[i];
+    --l;
+    t[i] = t[l] || a[l];
+  }
+  return r;
+}
 
-
-App = React.createClass({displayName: "App",
+var App = React.createClass({displayName: "App",
   getInitialState: function() {
   	return {
-      items: DATA['Members']
+      members: random(DATA['Members'], 5)
     };
+  },
+  onLabelClick: function (data, event) {
+	console.log(data);
+  },
+  onChange: function (value, members) {
+    this.setState({ members: members } );
+  },
+
+
+  addItem: function() {
+    this.setState({
+      items: [{text: this.state.newText, time: new Date(), key: Math.random()}].concat(this.state.items),
+      newText: ""
+    })
   },
 
   render: function() {
-    return React.createElement("div", null, 
-      React.createElement("div", null, 
-        this.state.items.map(function(item) {
-          return React.createElement("div", {className: "item"}, item.roma);
-        })
-      )
-    );
+	return React.createElement("div", null, 
+	  React.createElement("label", null, this.props.label), 
+	  React.createElement(Select, {
+	onOptionLabelClick: this.onLabelClick, 
+	value: this.state.members, 
+	multi: true, 
+	placeholder: "イベキャラを選択してください", 
+	options: DATA['Members'], 
+	onChange: this.onChange}), 
+      this.state.members.map(function(member) {
+      return React.createElement("div", null, 
+          React.createElement("ul", null, 
+          React.createElement("li", null, member.label), 
+          React.createElement("li", null, member.event), 
+            member.skills.map(function(skill) {
+               return React.createElement("li", null, skill);
+             }), 
+            member.special_skills.map(function(special_skill) {
+               return React.createElement("li", null, special_skill);
+             })
+          )
+          )
+    }, this)
+    )
   }
 });
 
@@ -31,12 +76,24 @@ React.render(React.createElement(App, null), document.body);
 
 },{"./data.jsx":2,"react":163,"react-select":4}],2:[function(require,module,exports){
 exports.Members = [
-  { label: '早川あおい', roma: 'hayakawa', value:'早川あおい',skills: [ {key: 'kankyu', name: '緩急'}], original: { key:'marin-ball', name: 'マリンボール'}, event: 'before' },
-  { label: '橘みずき', roma: 'tachibana', value: '橘みずき', event: 'after' },
-  { label: '六道聖', name: 'rikudou',value: '六道聖', event: 'after' },
-  { label: '猪狩守', roma: 'ikariani',value: '猪狩守', event: 'before' },
-  { label: '大鐘餅太郎', roma: 'ogane', value: '大鐘餅太郎', event: 'after' },
-  { label: '友沢亮', roma: 'tomosawa',value: '友沢亮', before: 'after' },
+  {
+    label:          '早川あおい',
+    roma:           'hayakawaaoi',
+    skills:         [ '緩急' ],
+    special_skills: ['マリンボール'] ,
+    event:          'before'
+  },
+  {
+    label:          '橘みずき',
+    roma:           'tachibanamizuki',
+    skills:         ['クロスファイアー'],
+    special_skills: ['クレッセントムーン'] ,
+    event:          'before'
+  }
+];
+
+exports.Combo = [
+  { name: 'テリブルトリオ', members: ['hayakawaaoi', 'tachibanamizuki', 'rikudohijiri']}
 ];
 
 
