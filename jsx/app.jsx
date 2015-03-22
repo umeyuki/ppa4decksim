@@ -24,9 +24,7 @@ function random(array, num) {
 var App = React.createClass({
   getInitialState: function() {
   	return {
-      members: [
-        { label: '橘みずき', roma: 'tachibana', value: '橘みずき', event: 'after' }
-      ]
+      members: random(DATA['Members'],5)
     };
   },
   onLabelClick: function (data, event) {
