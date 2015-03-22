@@ -1,29 +1,31 @@
 {
-  "name": "ppa4decksim",
-  "version": "1.0.0",
-  "description": "powerfull pro baseball deck simulator",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "ppa4sim",
+  "version": "0.1.1",
+  "description": "pawarpuro app event deck simulator",
+  "main": "lib/Ppa4sim.js",
+  "author": "umeyuki",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/umeyuki/ppa4decksim.git"
+    "url": "https://github.com/umeyuki/ppa4sim.git"
   },
-  "author": "umeyuki",
-  "license": "ISC",
+  "dependencies": {
+    "classnames": "^1.2.0",
+    "lodash": "^3.5.0",
+    "react": ">=0.12.0",
+    "react-input-autosize": "^0.4.0"
+  },
   "devDependencies": {
     "gulp": "^3.8.11",
-    "gulp-coffee": "^2.3.1",
-    "gulp-concat": "^2.5.2",
-    "gulp-header": "^1.2.2",
-    "gulp-plumber": "^0.6.6",
-    "gulp-slim": "0.0.13",
-    "gulp-uglify": "^1.1.0",
-    "gulp-webserver": "^0.9.0"
+    "react-component-gulp-tasks": "^0.4.2"
   },
-  "bugs": {
-    "url": "https://github.com/umeyuki/ppa4decksim/issues"
+  "browserify-shim": {
+    "classnames": "global:classnames",
+    "react": "global:React",
+    "react-input-autosize": "global:AutosizeInput",
+    "lodash": "global:_"
   },
-  "homepage": "https://github.com/umeyuki/ppa4decksim"
+  "scripts": {
+    "test": "echo \"no tests yet\" && exit 0"
+  }
 }
