@@ -24,29 +24,27 @@ function random(array, num) {
 var App = React.createClass({
   getInitialState: function() {
   	return {
+      combo: [],
+      before_event_count: 0,
+      after_event_count: 0,
       members: random(DATA['Members'], 5)
     };
   },
-  onLabelClick: function (data, event) {
-	console.log(data);
-  },
   onChange: function (value, members) {
     this.setState({ members: members } );
+	console.log('value:' + value);
+	console.log('members:' + members);
   },
-
-
   addItem: function() {
     this.setState({
       items: [{text: this.state.newText, time: new Date(), key: Math.random()}].concat(this.state.items),
       newText: ""
     })
   },
-
   render: function() {
 	return <div>
 	  <label>{this.props.label}</label>
 	  <Select
-	onOptionLabelClick={this.onLabelClick}
 	value={this.state.members}
 	multi={true}
 	placeholder="イベキャラを選択してください"

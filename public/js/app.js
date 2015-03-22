@@ -25,29 +25,27 @@ function random(array, num) {
 var App = React.createClass({displayName: "App",
   getInitialState: function() {
   	return {
+      combo: [],
+      before_event_count: 0,
+      after_event_count: 0,
       members: random(DATA['Members'], 5)
     };
   },
-  onLabelClick: function (data, event) {
-	console.log(data);
-  },
   onChange: function (value, members) {
     this.setState({ members: members } );
+	console.log('value:' + value);
+	console.log('members:' + members);
   },
-
-
   addItem: function() {
     this.setState({
       items: [{text: this.state.newText, time: new Date(), key: Math.random()}].concat(this.state.items),
       newText: ""
     })
   },
-
   render: function() {
 	return React.createElement("div", null, 
 	  React.createElement("label", null, this.props.label), 
 	  React.createElement(Select, {
-	onOptionLabelClick: this.onLabelClick, 
 	value: this.state.members, 
 	multi: true, 
 	placeholder: "イベキャラを選択してください", 
@@ -88,6 +86,13 @@ exports.Members = [
     roma:           'tachibanamizuki',
     skills:         ['クロスファイアー'],
     special_skills: ['クレッセントムーン'] ,
+    event:          'before'
+  },
+  {
+    label:          '六道聖',
+    roma:           'rikudohijiri',
+    skills:         ['キャッチャー','バント'],
+    special_skills: ['ささやき戦術'] ,
     event:          'before'
   }
 ];
