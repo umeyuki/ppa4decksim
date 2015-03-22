@@ -57,7 +57,7 @@ var App = React.createClass({displayName: "App",
   }
 });
 
-React.render(React.createElement(App, null), document.body);
+React.render(React.createElement(App, null), document.getElementById('app'));
 
 
 },{"./data.jsx":2,"react":163,"react-select":4}],2:[function(require,module,exports){
