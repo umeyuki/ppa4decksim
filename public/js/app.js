@@ -1,35 +1,16 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-/** @jsx React.DOM */
-
 var React = require('react'),
 	Select = require('react-select');
-var DATA = require('./data.jsx');
-
-// http://h2ham.net/javascript-random-array
-
-function random(array, num) {
-  var a = array;
-  var t = [];
-  var r = [];
-  var l = a.length;
-  var n = num < l ? num : l;
-  while (n-- > 0) {
-    var i = Math.random() * l | 0;
-    r[n] = t[i] || a[i];
-    --l;
-    t[i] = t[l] || a[l];
-  }
-  return r;
-}
-
+var DATA = require('./data.jsx')
 var App = React.createClass({displayName: "App",
   getInitialState: function() {
   	return {
-      members: random(DATA['Members'], 3)
+      members: []
     };
   },
-  onLabelClick: function (data, event) {
 
+  onLabelClick: function (data, event) {
+	console.log(data);
   },
   onChange: function (value, members) {
     this.setState({ members: members } );
@@ -45,22 +26,30 @@ var App = React.createClass({displayName: "App",
 	options: DATA['Members'], 
 	onChange: this.onChange}), 
       this.state.members.map(function(member) {
-      return React.createElement("section", {className: "member"}, 
-          React.createElement("div", null, member.label)
+      return React.createElement("div", null, 
+          React.createElement("ul", null, 
+          React.createElement("li", null, member.value)
+          )
           )
     }, this)
     )
   }
 });
 
-React.render(React.createElement(App, null), document.getElementById('app'));
+
+React.render(
+	React.createElement(App, {label: "イベキャラを選択してください:"})
+,
+  document.getElementById('app')
+);
 
 
 },{"./data.jsx":2,"react":163,"react-select":4}],2:[function(require,module,exports){
-exports.Members = [
+exports.Members =
+ [
   {
     label:  '早川あおい',
-    roma:   'hayakawaaoi',
+    value:   'hayakawaaoi',
     traning: '変化球',
     skills: ['緩急'],
     special_skills: ['マリンボール'],
@@ -68,7 +57,7 @@ exports.Members = [
   },
   {
     label: '橘みずき',
-    roma: 'tachibanamizuki',
+    value: 'tachibanamizuki',
     traning: 'コントロール',
     skills: ['クロスファイアー'],
     special_skills: ['クレッセントムーン'],
@@ -76,7 +65,7 @@ exports.Members = [
   },
   {
    label: '六道聖',
-   roma: 'rikudouhijiri',
+   value: 'rikudouhijiri',
    traning: '守備',
    skills: ['バント', '送球', 'キャッチャー'],
    special_skills: ['ささやき戦術'],
@@ -84,7 +73,7 @@ exports.Members = [
   },
   {
     label: '猪狩守',
-    roma: 'ikarimamoru',
+    value: 'ikarimamoru',
     traning: '球速',
     skills: ['球速', 'ピンチ', 'リリース'],
     special_skills: ['ライジングキャノン or ライジングショット'],
@@ -92,7 +81,7 @@ exports.Members = [
   },
   {
     label: '猪狩進',
-    roma: 'ikarisusumu',
+    value: 'ikarisusumu',
     traning: '球速',
     skills: ['球速', 'ピンチ', 'リリース'],
     special_skills: ['ライジングキャノン or ライジングショット'],

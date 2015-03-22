@@ -1,7 +1,8 @@
-exports.Members = [
+exports.Members =
+ [
   {
     label:  '早川あおい',
-    roma:   'hayakawaaoi',
+    value:   'hayakawaaoi',
     traning: '変化球',
     skills: ['緩急'],
     special_skills: ['マリンボール'],
@@ -9,7 +10,7 @@ exports.Members = [
   },
   {
     label: '橘みずき',
-    roma: 'tachibanamizuki',
+    value: 'tachibanamizuki',
     traning: 'コントロール',
     skills: ['クロスファイアー'],
     special_skills: ['クレッセントムーン'],
@@ -17,7 +18,7 @@ exports.Members = [
   },
   {
    label: '六道聖',
-   roma: 'rikudouhijiri',
+   value: 'rikudouhijiri',
    traning: '守備',
    skills: ['バント', '送球', 'キャッチャー'],
    special_skills: ['ささやき戦術'],
@@ -25,7 +26,7 @@ exports.Members = [
   },
   {
     label: '猪狩守',
-    roma: 'ikarimamoru',
+    value: 'ikarimamoru',
     traning: '球速',
     skills: ['球速', 'ピンチ', 'リリース'],
     special_skills: ['ライジングキャノン or ライジングショット'],
@@ -33,7 +34,7 @@ exports.Members = [
   },
   {
     label: '猪狩進',
-    roma: 'ikarisusumu',
+    value: 'ikarisusumu',
     traning: '球速',
     skills: ['球速', 'ピンチ', 'リリース'],
     special_skills: ['ライジングキャノン or ライジングショット'],
