@@ -60,13 +60,39 @@ React.render(React.createElement(App, null), document.getElementById('app'));
 
 },{"./data.jsx":2,"react":163,"react-select":4}],2:[function(require,module,exports){
 exports.Members = [
-  { label: '早川あおい', roma: 'hayakawa', value:'早川あおい',skills: [ {key: 'kankyu', name: '緩急'}], original: { key:'marin-ball', name: 'マリンボール'}, event: 'before' },
-  { label: '橘みずき', roma: 'tachibana', value: '橘みずき', event: 'after' },
-  { label: '六道聖', name: 'rikudou',value: '六道聖', event: 'after' },
-  { label: '猪狩守', roma: 'ikariani',value: '猪狩守', event: 'before' },
-  { label: '大鐘餅太郎', roma: 'ogane', value: '大鐘餅太郎', event: 'after' },
-  { label: '友沢亮', roma: 'tomosawa',value: '友沢亮', before: 'after' },
-];
+  {
+    label:  '早川あおい',
+    roma:   'hayakawaaoi',
+    traning: '変化球',
+    skills: ['緩急'],
+    special_skills: ['マリンボール'],
+    event: 'after'
+  },
+  {
+    label: '橘みずき',
+    roma: 'tachibanamizuki',
+    traning: 'コントロール',
+    skills: ['クロスファイアー'],
+    special_skills: ['クレッセントムーン'],
+    event: 'before'
+  },
+  {
+   label: '六道聖',
+   name: 'rikudouhijiri',
+   traning: '守備',
+   skills: ['バント', '送球', 'キャッチャー'],
+   special_skills: ['ささやき戦術'],
+   event: 'after'
+  }/* ,
+      {
+      label: '',
+      name: '',
+      traning: ''
+      skills: ['', '', ''],
+      special_skills: ['ささやき戦術'],
+      event: 'after'
+      }, */
+  ];
 
 
 },{}],3:[function(require,module,exports){
