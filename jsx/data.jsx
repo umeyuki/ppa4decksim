@@ -17,18 +17,27 @@ exports.Members = [
   },
   {
    label: '六道聖',
-   name: 'rikudouhijiri',
+   roma: 'rikudouhijiri',
    traning: '守備',
    skills: ['バント', '送球', 'キャッチャー'],
    special_skills: ['ささやき戦術'],
    event: 'after'
-  }/* ,
-      {
-      label: '',
-      name: '',
-      traning: ''
-      skills: ['', '', ''],
-      special_skills: ['ささやき戦術'],
-      event: 'after'
-      }, */
+  },
+  {
+    label: '猪狩守',
+    roma: 'ikarimamoru',
+    traning: '球速',
+    skills: ['球速', 'ピンチ', 'リリース'],
+    special_skills: ['ライジングキャノン or ライジングショット'],
+    event: 'after'
+  },
+  {
+    label: '猪狩進',
+    roma: 'ikarisusumu',
+    traning: '球速',
+    skills: ['球速', 'ピンチ', 'リリース'],
+    special_skills: ['ライジングキャノン or ライジングショット'],
+    event: 'after'
+  },
+
   ];

@@ -24,7 +24,7 @@ function random(array, num) {
 var App = React.createClass({
   getInitialState: function() {
   	return {
-      members: random(DATA['Members'],5)
+      members: random(DATA['Members'], 3)
     };
   },
   onLabelClick: function (data, event) {
@@ -38,17 +38,15 @@ var App = React.createClass({
 	  <label>{this.props.label}</label>
 	  <Select
 	onOptionLabelClick={this.onLabelClick}
-	value={this.state.members}
+	value=[{this.state.members}]
 	multi={true}
 	placeholder="イベキャラを選択してください"
 	options={DATA['Members']}
 	onChange={this.onChange} />
       {this.state.members.map(function(member) {
-      return <div>
-          <ul>
-          <li>{member.label}</li>
-          </ul>
-          </div>
+      return <section className="member">
+          <div >{member.label}</div>
+          </section>
     }, this)}
     </div>
   }

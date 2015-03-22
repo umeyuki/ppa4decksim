@@ -1,12 +1,13 @@
-var gulp       = require('gulp');
-var util       = require('gulp-util');
-var connect    = require('gulp-connect');
-var browserify = require('browserify');
-var reactify   = require('reactify');
-var source     = require('vinyl-source-stream');
-var buffer     = require('vinyl-buffer');
-var watchify   = require('watchify');
-var sourcemaps = require('gulp-sourcemaps');
+var gulp       = require('gulp'),
+    sass       = require('gulp-ruby-sass'),
+    util       = require('gulp-util'),
+    connect    = require('gulp-connect'),
+    browserify = require('browserify'),
+    reactify   = require('reactify'),
+    source     = require('vinyl-source-stream'),
+    buffer     = require('vinyl-buffer'),
+    watchify   = require('watchify'),
+    sourcemaps = require('gulp-sourcemaps');
 
 function errorHandler (err) {
   util.log(util.colors.red('Error'), err.message);
@@ -28,6 +29,15 @@ gulp.task('reload', function () {
       .pipe(connect.reload());
 });
 
+
+gulp.task('scss',function(){
+  return sass('scss', {
+      style      : 'expand',
+      require    : ['bourbon', 'neat']
+    })
+    .pipe(gulp.dest('./public/css'));
+});
+
 gulp.task('build', function () {
   bundler.bundle()
       .on('error', errorHandler)
@@ -39,8 +49,11 @@ gulp.task('build', function () {
 });
 
 gulp.task('watch', function () {
+  gulp.watch(['./scss/**.scss'], ['scss']);
   gulp.watch(['./jsx/**/*.jsx'], ['build']);
   gulp.watch(['./public/**/*.*', '!./public/**/*.js.map'], ['reload']);
 });
+
+
 
 gulp.task('default', ['build', 'connect', 'watch']);
