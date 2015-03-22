@@ -25,27 +25,22 @@ function random(array, num) {
 var App = React.createClass({displayName: "App",
   getInitialState: function() {
   	return {
-      combo: [],
-      before_event_count: 0,
-      after_event_count: 0,
-      members: random(DATA['Members'], 5)
+      members: [
+        { label: '橘みずき', roma: 'tachibana', value: '橘みずき', event: 'after' }
+      ]
     };
+  },
+  onLabelClick: function (data, event) {
+
   },
   onChange: function (value, members) {
     this.setState({ members: members } );
-	console.log('value:' + value);
-	console.log('members:' + members);
-  },
-  addItem: function() {
-    this.setState({
-      items: [{text: this.state.newText, time: new Date(), key: Math.random()}].concat(this.state.items),
-      newText: ""
-    })
   },
   render: function() {
 	return React.createElement("div", null, 
 	  React.createElement("label", null, this.props.label), 
 	  React.createElement(Select, {
+	onOptionLabelClick: this.onLabelClick, 
 	value: this.state.members, 
 	multi: true, 
 	placeholder: "イベキャラを選択してください", 
@@ -54,14 +49,7 @@ var App = React.createClass({displayName: "App",
       this.state.members.map(function(member) {
       return React.createElement("div", null, 
           React.createElement("ul", null, 
-          React.createElement("li", null, member.label), 
-          React.createElement("li", null, member.event), 
-            member.skills.map(function(skill) {
-               return React.createElement("li", null, skill);
-             }), 
-            member.special_skills.map(function(special_skill) {
-               return React.createElement("li", null, special_skill);
-             })
+          React.createElement("li", null, member.label)
           )
           )
     }, this)
@@ -74,31 +62,12 @@ React.render(React.createElement(App, null), document.body);
 
 },{"./data.jsx":2,"react":163,"react-select":4}],2:[function(require,module,exports){
 exports.Members = [
-  {
-    label:          '早川あおい',
-    roma:           'hayakawaaoi',
-    skills:         [ '緩急' ],
-    special_skills: ['マリンボール'] ,
-    event:          'before'
-  },
-  {
-    label:          '橘みずき',
-    roma:           'tachibanamizuki',
-    skills:         ['クロスファイアー'],
-    special_skills: ['クレッセントムーン'] ,
-    event:          'before'
-  },
-  {
-    label:          '六道聖',
-    roma:           'rikudohijiri',
-    skills:         ['キャッチャー','バント'],
-    special_skills: ['ささやき戦術'] ,
-    event:          'before'
-  }
-];
-
-exports.Combo = [
-  { name: 'テリブルトリオ', members: ['hayakawaaoi', 'tachibanamizuki', 'rikudohijiri']}
+  { label: '早川あおい', roma: 'hayakawa', value:'早川あおい',skills: [ {key: 'kankyu', name: '緩急'}], original: { key:'marin-ball', name: 'マリンボール'}, event: 'before' },
+  { label: '橘みずき', roma: 'tachibana', value: '橘みずき', event: 'after' },
+  { label: '六道聖', name: 'rikudou',value: '六道聖', event: 'after' },
+  { label: '猪狩守', roma: 'ikariani',value: '猪狩守', event: 'before' },
+  { label: '大鐘餅太郎', roma: 'ogane', value: '大鐘餅太郎', event: 'after' },
+  { label: '友沢亮', roma: 'tomosawa',value: '友沢亮', before: 'after' },
 ];
 
 
