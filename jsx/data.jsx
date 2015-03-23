@@ -6,7 +6,7 @@ exports.Members =
     traning: '変化球',
     skills: ['緩急'],
     special_skills: ['マリンボール'],
-    event: 'after'
+    event_order: 'after'
   },
   {
     label: '橘みずき',
@@ -14,7 +14,7 @@ exports.Members =
     traning: 'コントロール',
     skills: ['クロスファイアー'],
     special_skills: ['クレッセントムーン'],
-    event: 'before'
+    event_order: 0
   },
   {
    label: '六道聖',
@@ -22,7 +22,7 @@ exports.Members =
    traning: '守備',
    skills: ['バント', '送球', 'キャッチャー'],
    special_skills: ['ささやき戦術'],
-   event: 'after'
+   event_order: 1
   },
   {
     label: '猪狩守',
@@ -30,7 +30,15 @@ exports.Members =
     traning: '球速',
     skills: ['球速', 'ピンチ', 'リリース'],
     special_skills: ['ライジングキャノン or ライジングショット'],
-    event: 'after'
+    event_order: 1
+  },
+  {
+    label: '大鐘餅太郎',
+    value: 'okanemochitaro',
+    traning: '守備',
+    skills: ['粘り打ち', 'ハイボールヒッター', '初級'],
+    special_skills: ['左キラー'],
+    event_order: 1
   },
   {
     label: '猪狩進',
@@ -38,7 +46,110 @@ exports.Members =
     traning: '球速',
     skills: ['球速', 'ピンチ', 'リリース'],
     special_skills: ['ライジングキャノン or ライジングショット'],
-    event: 'after'
+    event_order: 1
   },
-
+  {
+    label: '明星雪華',
+    value: 'akehoshisetuka',
+    traning: false,
+    skills: false,
+    special_skills: ['一球入魂', '脅威の切れ味'],
+    event_order: 1
+  },
+  /* {
+     label: 'アンヌ',
+     value: '',
+     traning: '',
+     skills: ['', '', ''],
+     special_skills: [''],
+     event_order: 0
+     },
+     {
+     label: '',
+     value: '',
+     traning: '',
+     skills: ['', '', ''],
+     special_skills: [''],
+     event_order: 0
+     },
+     {
+     label: '',
+     value: '',
+     traning: '',
+     skills: ['', '', ''],
+     special_skills: [''],
+     event_order: 0
+     },
+     {
+     label: '',
+     value: '',
+     traning: '',
+     skills: ['', '', ''],
+     special_skills: [''],
+     event_order: 0
+     },
+     {
+     label: '',
+     value: '',
+     traning: '',
+     skills: ['', '', ''],
+     special_skills: [''],
+     event_order: 0
+     },
+     {
+     label: '',
+     value: '',
+     traning: '',
+     skills: ['', '', ''],
+     special_skills: [''],
+     event_order: 0
+     },
+     {
+     label: '',
+     value: '',
+     traning: '',
+     skills: ['', '', ''],
+     special_skills: [''],
+     event_order: 0
+     },
+     {
+     label: '',
+     value: '',
+     traning: '',
+     skills: ['', '', ''],
+     special_skills: [''],
+     event_order: 0
+     },
+     {
+     label: '',
+     value: '',
+     traning: '',
+     skills: ['', '', ''],
+     special_skills: [''],
+     event_order: 0
+     },
+     {
+     label: '',
+     value: '',
+     traning: '',
+     skills: ['', '', ''],
+     special_skills: [''],
+     event_order: 0
+     },
+     {
+     label: '',
+     value: '',
+     traning: '',
+     skills: ['', '', ''],
+     special_skills: [''],
+     event_order: 0
+     },
+     {
+     label: '',
+     value: '',
+     traning: '',
+     skills: ['', '', ''],
+     special_skills: [''],
+     event_order: 0
+     }, */
   ];

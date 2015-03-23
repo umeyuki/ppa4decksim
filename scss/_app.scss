@@ -1,3 +1,36 @@
+@media screen and (min-width: 769px){
+  img{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+  }
+  .container{
+    width:100%;
+  }
+}
+
+@media screen and (max-width: 768px){
+  img{
+    max-width: 100%;
+    height: auto;
+    width:  auto;
+  }
+  .container{
+    width:100%;
+  }
+}
+
+@media screen and (max-width:640px){
+  img{
+    max-width: 100%;
+    height: auto;
+    width:  auto;
+  }
+  .container{
+    width:100%;
+  }
+}
+
 body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -11,12 +44,6 @@ a {
 }
 a:hover {
   text-decoration: underline;
-}
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 400px;
-  padding: 1em;
 }
 .footer {
   margin-top: 50px;
