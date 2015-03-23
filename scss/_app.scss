@@ -1,4 +1,12 @@
-@media screen and (min-width: 769px){
+@media screen and (min-width: 979px){
+  .container{
+    width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 767px){
   .container{
     width: 750px;
     margin-left: auto;
@@ -6,17 +14,9 @@
   }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width:479px){
   .container{
-    width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media screen and (max-width:640px){
-  .container{
-    width: 600px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
