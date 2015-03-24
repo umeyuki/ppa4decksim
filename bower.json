@@ -1,0 +1,21 @@
+{
+  "name": "ppa4decksim",
+  "version": "0.0.1",
+  "homepage": "https://github.com/umeyuki/ppa4decksim",
+  "authors": [
+    "umeyuki <umeyuki1326+github@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pure-extras": "*",
+    "pure": "0.6.0"
+  }
+}

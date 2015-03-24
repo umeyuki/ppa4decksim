@@ -42,9 +42,10 @@ var App = React.createClass({
 
       {this.state.members.map(function(member) {
         return <section className="pure-g">
-        <div className="pure-u-1-3">{member.label}</div>
-        <div className="pure-u-1-3">{member.label}</div>
-        <div className="pure-u-1-3">{member.label}</div>
+        <div className="pure-u-1-4"><span className="pure-badge">{member.label}</span></div>
+        <div className="pure-u-1-4">{member.label}</div>
+        <div className="pure-u-1-4">{member.label}</div>
+        <div className="pure-u-1-4">{member.label}</div>
         </section>
     }, this)}
         {this.state.before_event_count}

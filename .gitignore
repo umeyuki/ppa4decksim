@@ -28,4 +28,7 @@ node_modules
 .lock-wscript
 
 public/js/*.js.map
+public/js/*.js
+public/css/
+public/pure*
 .sass-cache
