@@ -75,4 +75,9 @@ gulp.task('watch', function () {
   gulp.watch(['./src/**/*.*', '!./src/js/*.js.map'], ['reload']);
 });
 
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
+
 gulp.task('default', ['build', 'connect', 'watch']);
