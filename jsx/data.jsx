@@ -514,24 +514,84 @@ exports.Members =
 		match_bonus: false
   },
   {
-    label: '',
-    value: '',
-    traning: '',
-    skills: ['', ''],
-    special_skills: [''],
+    label: '香本富久雄',
+    value: 'komototokuo',
+    traning: '筋力',
+    skills: ['チャンス', 'キャッチャー'],
+    special_skills: ['鉄の壁'],
     event_order: 0,
 		type: 0,
 		match_bonus: false
   },
   {
-    label: '',
-    value: '',
-    traning: '',
-    skills: ['', ''],
-    special_skills: [''],
+    label: '小鷹美麗',
+    value: 'kodakamirei',
+    traning: '守備',
+    skills: ['バント職人', '対エース', '意外性', '逆境', 'チャンス', 'キャッチャー'],
+    special_skills: ['ストライク送球'],
+    event_order: 0,
+		type: 1,
+		match_bonus: false
+  },
+  {
+    label: '矢部明雄',
+    value: 'yabeakio',
+    traning: '走塁',
+    skills: ['ヘッドスライティング', '盗塁', '走塁'],
+    special_skills: ['高速ベースラン'],
+    event_order: 1,
+		type: 0,
+		match_bonus: true
+  },
+  {
+    label: '猛田慶次',
+    value: 'moudakeiji',
+    traning: '精神',
+    skills: ['チャンス', 'サヨナラ男', '逆境', '代打', '意外性', '体当たり'],
+    special_skills: ['勝負師'],
     event_order: 0,
 		type: 0,
 		match_bonus: false
   },
+  {
+    label: '渋谷秀喜',
+    value: 'shibutanihideki',
+    traning: '筋力',
+    skills: ['サヨナラ男', '意外性'],
+    special_skills: ['伝説のサヨナラ男'],
+    event_order: 0,
+		type: 0,
+		match_bonus: false
+  },
+  {
+    label: '鎌刈善二',
+    value: 'kamakarizenji',
+    traning: '打撃',
+    skills: ['アベレージヒッター', 'ローボールヒッター', '流し打ち'],
+    special_skills: ['一球入魂'],
+    event_order: 0,
+		type: 0,
+		match_bonus: false
+  },
+  {
+    label: '城井伯斎',
+    value: 'siroihakusai',
+    traning: '守備',
+    skills: ['守備職人', '送球', '満塁男'],
+    special_skills: ['切り込み隊長', '不屈の精神'],
+    event_order: 1,
+		type: 0,
+		match_bonus: true
+  },
+  {
+    label: '九十九宇宙',
+    value: 'tsukumotakaoki',
+    traning: '肩力',
+    skills: ['流し打ち', 'ハイボールヒッター', 'レーザービーム'],
+    special_skills: ['高速レーザー'],
+    event_order: 0,
+		type: 0,
+		match_bonus: false
+  }
 
 ];
