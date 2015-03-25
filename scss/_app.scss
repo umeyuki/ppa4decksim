@@ -30,12 +30,24 @@ body {
   padding: 0;
 }
 
-h1 {
+span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+h2.content-subhead {
+  margin: 2em 0 1em 0;
+  color: #888;
+  position: relative;
   font-size: 14px;
 }
 
 .event-count {
   margin-top: 25px;
+  span {
+    font-size: 16px;
+  }
   span.about-event {
     margin-left:15px;
   }
