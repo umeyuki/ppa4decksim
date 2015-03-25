@@ -30,18 +30,22 @@ body {
   padding: 0;
 }
 
-.result {
+table.result {
   margin-top: 25px;
+  th {
+    text-align: center;
+    width: 150px;
+  }
+  td.before {
+    text-align: left !important;
+  }
+  td.after {
+    text-align: right !important;
+  }
   ul {
     padding-left: 2px;
     li {
       list-style-type:none;
-      span.before {
-        margin-left: 20px;
-      }
-      span.before {
-
-      }
     }
   }
 }

@@ -52,8 +52,7 @@ var App = React.createClass({
               </tr>
           </thead>
       {this.state.members.map(function(member) {
-          var eventClass = cx({
-              "pure-badge": true,
+          var eventTdClass = cx({
               "before": member.event_order === 0,
               "after":  member.event_order === 1
           });
@@ -62,8 +61,8 @@ var App = React.createClass({
           <td>
             <span className="pure-badge">{member.label}</span>
           </td>
-          <td>
-            <span className={eventClass}>{member.event_order === 0 ? "前イベ" : "後イベ"}</span>
+          <td className={eventTdClass}>
+            <span className="pure-badge">{member.event_order === 0 ? "前イベ" : "後イベ"}</span>
           </td>
 		  <td>
             <ul>

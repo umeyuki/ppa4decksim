@@ -20,14 +20,19 @@ body {
   margin: 0;
   padding: 0; }
 
-.result {
+table.result {
   margin-top: 25px; }
-.result ul {
+table.result th {
+  text-align: center;
+  width: 150px; }
+table.result td.before {
+  text-align: left !important; }
+table.result td.after {
+  text-align: right !important; }
+table.result ul {
   padding-left: 2px; }
-.result ul li {
+table.result ul li {
   list-style-type: none; }
-.result ul li span.before {
-  margin-left: 20px; }
 
 a {
   color: #08c;
