@@ -107,8 +107,8 @@ var App = React.createClass({
 			<section className="pure-g hint">
 				<div className="pure-u-1-1">
 				  <div>
-						<span className="pure-badge male">男</span>
-						<span className="pure-badge female">女</span>
+						<span className="pure-badge male">男性</span>
+						<span className="pure-badge female">女性</span>
 						<span className="pure-badge girlfriend">彼女</span>
 						<span className="pure-badge girlfriend-player">選手兼彼女</span>
 					</div>
