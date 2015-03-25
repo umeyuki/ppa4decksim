@@ -344,11 +344,171 @@ exports.Members =
 		match_bonus: true
   },
   {
-    label: '',
-    value: '',
-    traning: '',
-    skills: ['', ''],
-    special_skills: [''],
+    label: '美園千花',
+    value: 'misonochika',
+    traning: '筋力',
+    skills: ['キャッチャー', '意外性'],
+    special_skills: ['球界の頭脳'],
+    event_order: 1,
+		type: 3,
+		match_bonus: false
+  },
+  {
+    label: '小嵐リョウ',
+    value: 'koarashiryo',
+    traning: '守備',
+    skills: ['チャンス', '走塁', 'バント', '守備職人'],
+    special_skills: ['魔術師'],
+    event_order: 0,
+		type: 3,
+		match_bonus: false
+  },
+  {
+    label: '八尺巫女子',
+    value: 'hasshakumikoko',
+    traning: '筋力',
+    skills: ['粘り打ち', '内野安打'],
+    special_skills: ['切り込み隊長'],
+    event_order: 0,
+		type: 3,
+		match_bonus: false
+  },
+  {
+    label: '大西=ハリソン',
+    value: 'onishiharison',
+    traning: 'スタミナ',
+    skills: ['ポーカーフェイス'],
+    special_skills: ['鉄椀'],
+    event_order: 1,
+		type: 0,
+		match_bonus: false
+  },
+  {
+    label: '銭形乱蔵',
+    value: 'zenigataranzo',
+    traning: '守備',
+    skills: ['対ピンチ', '対左投手', '打たれ強さ'],
+    special_skills: ['強心臓'],
+    event_order: 1,
+		type: 0,
+		match_bonus: false
+  },
+  {
+    label: '鋼毅',
+    value: 'haganetuyoshi',
+    traning: 'スタミナ',
+    skills: ['ノビ', '対ピンチ'],
+    special_skills: ['怪童', 'アーチスト'],
+    event_order: 0,
+		type: 0,
+		match_bonus: false
+  },
+  {
+    label: '嵐丸士郎',
+    value: 'arashimarushiro',
+    traning: '精神',
+    skills: ['対強打者'],
+    special_skills: ['鉄人'],
+    event_order: 0,
+		type: 0,
+		match_bonus: false
+  },
+  {
+    label: '久方怜',
+    value: 'hisakatarei',
+    traning: 'コントロール',
+    skills: false,
+    special_skills: ['脅威の切れ味'],
+    event_order: 1,
+		type: 0,
+		match_bonus: true
+  },
+  {
+    label: '鶴屋勝',
+    value: 'turuyamasaru',
+    traning: 'コントロール',
+    skills: ['対左打者', 'ノビ'],
+    special_skills: ['本塁打厳禁'],
+    event_order: 0,
+		type: 0,
+		match_bonus: false
+  },
+  {
+    label: '太刀川広巳',
+    value: 'tachikawahiromi',
+    traning: '変化球',
+    skills: ['重い球', 'ノビ', '尻上がり', '対強打者'],
+    special_skills: ['怪物脅威'],
+    event_order: 1,
+		type: 1,
+		match_bonus: false
+  },
+  {
+    label: '小平陽向',
+    value: 'kodairahinata',
+    traning: '精神',
+    skills: ['アベレージヒッター', '流し打ち', '内野安打', '走塁'],
+    special_skills: ['切り込み隊長'],
+    event_order: 0,
+		type: 0,
+		match_bonus: false
+  },
+  {
+    label: '茶来元気',
+    value: 'charaigenki',
+    traning: '守備',
+    skills: ['チャンス', '固め打ち'],
+    special_skills: ['切り込み隊長'],
+    event_order: 0,
+		type: 0,
+		match_bonus: false
+  },
+  {
+    label: '鮫島条太郎',
+    value: 'samejimajyotaro',
+    traning: '筋力',
+    skills: ['流し打ち', 'サヨナラ男', '逆境', 'ヘッドスライティング'],
+    special_skills: ['一球入魂'],
+    event_order: 0,
+		type: 0,
+		match_bonus: false
+  },
+  {
+    label: '小豪月剛',
+    value: 'syogotsukitakeshi',
+    traning: '筋力',
+    skills: false,
+    special_skills: ['ドクターK', '一球入魂'],
+    event_order: 1,
+		type: 0,
+		match_bonus: false
+  },
+  {
+    label: '中之島幸宏',
+    value: 'nakanoshimayukihiro',
+    traning: '打撃',
+    skills: ['チャンス', '盗塁', 'アベレージヒッター', '流し打ち'],
+    special_skills: ['電光石火'],
+    event_order: 1,
+		type: 0,
+		match_bonus: true
+  },
+  {
+    label: '田中山太郎',
+    value: 'tanakayamataro',
+    traning: '守備',
+    skills: ['バント'],
+    special_skills: ['魔術師'],
+    event_order: 1,
+		type: 0,
+		match_bonus: false
+  },
+  {
+    label: '有村佐治',
+    value: 'arimurasaji',
+    traning: '肩力',
+    skills: ['ブロック', 'ローボールヒッター', 'いぶし銀', '意外性', '送球'],
+    special_skills: ['鉄人'],
     event_order: 0,
 		type: 0,
 		match_bonus: false
@@ -373,14 +533,5 @@ exports.Members =
 		type: 0,
 		match_bonus: false
   },
-  {
-    label: '',
-    value: '',
-    traning: '',
-    skills: ['', ''],
-    special_skills: [''],
-    event_order: 0,
-		type: 0,
-		match_bonus: false
-  },
+
 ];
