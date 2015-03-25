@@ -6,7 +6,7 @@ exports.Members =
     traning: '変化球',
     skills: ['緩急'],
     special_skills: ['マリンボール'],
-    event_order: 'after'
+    event_order: 1
   },
   {
     label: '橘みずき',
