@@ -119,7 +119,7 @@ onChange={this.onChange} />
 
 
 			React.render(
-				<App label="イベキャラを選択してください:" />
+				<App/>
 				,
 				document.getElementById('app')
 			);
