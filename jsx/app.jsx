@@ -4,10 +4,11 @@ var DATA = require('./data.jsx')
 
 var App = React.createClass({
     getInitialState: function() {
-  	return {
+    return {
+      options: DATA['Members'],
       members: [],
       before_event_count: 0,
-      after_event_count:  0
+      after_event_count:  0,
     };
   },
 
@@ -15,12 +16,15 @@ var App = React.createClass({
 	console.log(data);
   },
   onChange: function (value, members) {
+    if ( members.length < 6 ) {
+      this.setState({ options: DATA['Members']});
+    } else {
+      this.setState({ options: [] });
+    }
     this.setState({ members: members } );
     before=0;
     after=0;
-    console.log(members.length);
     for (var i=0; i < members.length; i++) {
-      console.log(members[i]);
       if ( members[i].event_order == 0 ) {
         before++;
       } else {
@@ -39,7 +43,7 @@ var App = React.createClass({
 	value={this.state.members}
 	multi={true}
 	placeholder="イベキャラを選択してください"
-	options={DATA['Members']}
+	options={this.state.options}
 	onChange={this.onChange} />
       <table className="pure-table pure-table-bordered result">
           <thead>
