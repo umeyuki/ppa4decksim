@@ -32,6 +32,9 @@ body {
 
 .event-count {
   margin-top: 25px;
+  span.about-event {
+    margin-left:15px;
+  }
 }
 
 table.result {
@@ -40,6 +43,15 @@ table.result {
     text-align: center;
     width: 150px;
   }
+  th.event-order {
+    text-align: center;
+    width: 175px;
+  }
+  th.traning {
+    text-align: center;
+    width: 80px;
+  }
+
   td.before {
     text-align: left !important;
   }
