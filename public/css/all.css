@@ -20,6 +20,9 @@ body {
   margin: 0;
   padding: 0; }
 
+.event-count {
+  margin-top: 25px; }
+
 table.result {
   margin-top: 25px; }
 table.result th {

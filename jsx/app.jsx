@@ -44,14 +44,18 @@ var App = React.createClass({
 	multi={true}
 	placeholder="イベキャラを選択してください"
 	options={this.state.options}
-	onChange={this.onChange} />
+    onChange={this.onChange} />
+      <div className="event-count">
+        <span className="pure-badge">前イベ {this.state.before_event_count}</span>
+        <span className="pure-badge">後イベ {this.state.after_event_count}</span>
+      </div>
       <table className="pure-table pure-table-bordered result">
           <thead>
               <tr>
                   <th>イベキャラ</th>
                   <th>イベント</th>
-                  <th>コツ</th>
                   <th>得意練習</th>
+                  <th>コツ</th>
                   <th>金特・オリ変</th>
               </tr>
           </thead>
@@ -69,20 +73,26 @@ var App = React.createClass({
             <span className="pure-badge">{member.event_order === 0 ? "前イベ" : "後イベ"}</span>
           </td>
 		  <td>
+            <span className="pure-badge">{member.traning}</span>
+          </td>
+		  <td>
             <ul>
               {member.skills.map(function(skill) {
                 return <li><span className="pure-badge">{skill}</span></li>;
               })}
             </ul>
           </td>
-		  <td></td>
-		  <td></td>
+		  <td>
+            <ul>
+              {member.special_skills.map(function(special) {
+                return <li><span className="pure-badge">{special}</span></li>;
+              })}
+            </ul>
+          </td>
           </tr>
         </tbody>
        }, this)}
       </table>
-      {this.state.before_event_count}
-      {this.state.after_event_count}
       <table className="pure-table pure-table-bordered result">
           <thead>
               <tr>
