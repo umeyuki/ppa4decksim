@@ -36,6 +36,10 @@ span {
   text-overflow: ellipsis;
 }
 
+span.pure-badge {
+  font-size: 16px;
+}
+
 h2.content-subhead {
   margin: 2em 0 1em 0;
   color: #888;
@@ -46,7 +50,9 @@ h2.content-subhead {
 .event-count {
   margin-top: 25px;
   span {
-    font-size: 16px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
   }
   span.about-event {
     display: inline-block;
@@ -92,7 +98,7 @@ span.special-skill {
 
 .member {
   margin-right:10px;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
   width:95px;
 }

@@ -37,19 +37,6 @@ var App = React.createClass({
     var cx = React.addons.classSet;
     return <section>
 	  <label>{this.props.label}</label>
-		<section className="pure-g hint">
-				<div className="pure-u-1-1">
-						<span className="pure-badge male">男</span>
-						<span className="pure-badge female">女</span>
-						<span className="pure-badge girlfriend">彼女</span>
-						<span className="pure-badge girlfriend-player">選手兼彼女</span>
-						<span className="pure-badge before">前イベ</span>
-						<span className="pure-badge after">後イベ</span>
-						<span className="pure-badge traning">得意練習</span>
-						<span className="pure-badge skill">練習コツ</span>
-						<span className="pure-badge special-skill">金特・オリ変</span>
-				</div>
-		</section>
 	  <Select
       onOptionLabelClick={this.onLabelClick}
 			value={this.state.members}
@@ -58,10 +45,10 @@ var App = React.createClass({
 			options={this.state.options}
 			onChange={this.onChange} />
     <section className="event-count">
-        <span className="pure-badge before">
+        <span className="pure-button before">
 						前イベ {this.state.before_event_count}
 				</span>
-        <span className="pure-badge after">
+        <span className="pure-button after">
 						後イベ {this.state.after_event_count}
 				</span>
         <span className="about-event">
@@ -116,6 +103,25 @@ var App = React.createClass({
       </div>
 			</div>
 		 }, this)}
+			<hr/>
+			<section className="pure-g hint">
+				<div className="pure-u-1-1">
+				  <div>
+						<span className="pure-badge male">男</span>
+						<span className="pure-badge female">女</span>
+						<span className="pure-badge girlfriend">彼女</span>
+						<span className="pure-badge girlfriend-player">選手兼彼女</span>
+					</div>
+					<div>
+						<span className="pure-badge before">前イベ</span>
+						<span className="pure-badge after">後イベ</span>
+						<span className="pure-badge traning">得意練習</span>
+						<span className="pure-badge skill">練習コツ</span>
+						<span className="pure-badge special-skill">金特・オリジナル変化球</span>
+					</div>
+  			</div>
+			</section>
+
 		</section>
 	}
 });
