@@ -20,6 +20,15 @@ body {
   margin: 0;
   padding: 0; }
 
+.result {
+  margin-top: 25px; }
+.result ul {
+  padding-left: 2px; }
+.result ul li {
+  list-style-type: none; }
+.result ul li span.before {
+  margin-left: 20px; }
+
 a {
   color: #08c;
   text-decoration: none; }

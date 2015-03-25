@@ -1,8 +1,9 @@
-var React = require('react'),
+var React = require('react/addons'),
 	Select = require('react-select');
 var DATA = require('./data.jsx')
+
 var App = React.createClass({
-  getInitialState: function() {
+    getInitialState: function() {
   	return {
       members: [],
       before_event_count: 0,
@@ -30,7 +31,8 @@ var App = React.createClass({
     this.setState( { after_event_count: after  } )
   },
   render: function() {
-	return <div>
+      var cx = React.addons.classSet;
+      return <div>
 	  <label>{this.props.label}</label>
 	  <Select
 	onOptionLabelClick={this.onLabelClick}
@@ -39,17 +41,59 @@ var App = React.createClass({
 	placeholder="イベキャラを選択してください"
 	options={DATA['Members']}
 	onChange={this.onChange} />
-
+      <table className="pure-table pure-table-bordered result">
+          <thead>
+              <tr>
+                  <th>イベキャラ</th>
+                  <th>イベント</th>
+                  <th>コツ</th>
+                  <th>得意練習</th>
+                  <th>金特・オリ変</th>
+              </tr>
+          </thead>
       {this.state.members.map(function(member) {
-        return <section className="pure-g">
-        <div className="pure-u-1-4"><span className="pure-badge">{member.label}</span></div>
-        <div className="pure-u-1-4">{member.label}</div>
-        <div className="pure-u-1-4">{member.label}</div>
-        <div className="pure-u-1-4">{member.label}</div>
-        </section>
-    }, this)}
-        {this.state.before_event_count}
-        {this.state.after_event_count}
+          var eventClass = cx({
+              "pure-badge": true,
+              "before": member.event_order === 0,
+              "after":  member.event_order === 1
+          });
+          return <tbody>
+          <tr>
+          <td>
+            <span className="pure-badge">{member.label}</span>
+          </td>
+          <td>
+            <span className={eventClass}>{member.event_order === 0 ? "前イベ" : "後イベ"}</span>
+          </td>
+		  <td>
+            <ul>
+              {member.skills.map(function(skill) {
+                return <li><span className="pure-badge">{skill}</span></li>;
+              })}
+            </ul>
+          </td>
+		  <td></td>
+		  <td></td>
+          </tr>
+        </tbody>
+       }, this)}
+      </table>
+      {this.state.before_event_count}
+      {this.state.after_event_count}
+      <table className="pure-table pure-table-bordered result">
+          <thead>
+              <tr>
+                  <th>コンボ</th>
+                  <th>効果</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>hogehoge</td>
+                  <td>hogehoge</td>
+              </tr>
+          </tbody>
+      </table>
     </div>
   }
 });
