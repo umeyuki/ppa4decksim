@@ -45,45 +45,52 @@ placeholder="イベキャラを選択してください"
 options={this.state.options}
 onChange={this.onChange} />
     <div className="event-count">
-        <span className="pure-badge">前イベ {this.state.before_event_count}</span>
-        <span className="pure-badge">後イベ {this.state.after_event_count}</span>
+        <span className="pure-badge before">前イベ {this.state.before_event_count}</span>
+        <span className="pure-badge after">後イベ {this.state.after_event_count}</span>
         <span class="about-event">  前イベ・後イベとは?</span>
     </div>
     <table className="pure-table pure-table-bordered result">
         <thead>
             <tr>
                 <th>イベキャラ</th>
-                <th className="event">イベント</th>
+                <th className="event-order">イベント</th>
                 <th className="traning">得意練習</th>
-                <th>コツ</th>
+                <th>練習コツ</th>
                 <th>金特・オリ変</th>
             </tr>
         </thead>
 				{this.state.members.map(function(member) {
 					var memberClass  = cx({
 						"pure-badge": true,
-						"male": member.type === 0 ,
-            "female": member.type === 1,
-            "girlfriend": member.type === 2,
-						"girlfriend-player": member.type === 3
+						"pure-badge-male": member.type === 0 ,
+            "pure-badge-female": member.type === 1,
+            "pure-badge-girlfriend": member.type === 2,
+						"pure-badge-girlfriend-player": member.type === 3
 					});
           var eventTdClass = cx({
             "before": member.event_order === 0,
             "after":  member.event_order === 1
           });
+          var eventClass = cx({
+						"pure-badge": true,
+            "before": member.event_order === 0,
+            "after":  member.event_order === 1
+          });
           var traningClass = cx({
- 						"pure-badge": member.traning
+ 						"pure-badge": member.traning,
+						"traning": true
           });
           var skillClass = cx({
-						"pure-badge": member.skills.length > 0
+						"pure-badge": member.skills.length > 0,
+						"skill": true
           });
           return <tbody>
           <tr>
           <td>
-          <span className="pure-badge">{member.label}</span>
+          <span className={memberClass}>{member.label}</span>
           </td>
           <td className={eventTdClass}>
-          <span className="pure-badge">{member.event_order === 0 ? "前イベ" : "後イベ"}</span>
+          <span className={eventClass}>{member.event_order === 0 ? "前イベ" : "後イベ"}</span>
           </td>
 					<td>
           <span className={traningClass}>{member.traning}</span>
@@ -98,7 +105,7 @@ onChange={this.onChange} />
 					<td>
           <ul>
           {member.special_skills.map(function(special) {
-            return <li><span className="pure-badge">{special}</span></li>;
+            return <li><span className="pure-badge special-skill">{special}</span></li>;
           })}
           </ul>
           </td>

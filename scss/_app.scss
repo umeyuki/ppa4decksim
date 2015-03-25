@@ -30,6 +30,10 @@ body {
   padding: 0;
 }
 
+h1 {
+  font-size: 14px;
+}
+
 .event-count {
   margin-top: 25px;
   span.about-event {
@@ -51,7 +55,8 @@ table.result {
     text-align: center;
     width: 80px;
   }
-
+  td {
+  }
   td.before {
     text-align: left !important;
   }
@@ -65,6 +70,40 @@ table.result {
     }
   }
 }
+
+span.traning {
+  background-color: #005FFF;
+}
+span.before {
+  background-color: #77EEFF;
+}
+span.after {
+  background-color: #FF570D;
+}
+span.skill {
+  background-color: #B6FF01;
+}
+span.special-skill {
+  background-color: #e6b422;
+}
+
+
+.pure-badge-male {
+  background-color: #66FF33;
+}
+
+.pure-badge-female {
+  background-color: #9933CC;
+}
+
+.pure-badge-girlfriend {
+  background-color: #FF99FF;
+}
+
+.pure-badge-girlfriend-player {
+  background-color: #CC33FF;
+}
+
 
 a {
   color: #08c;
