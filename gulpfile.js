@@ -7,35 +7,55 @@ var gulp       = require('gulp'),
     source     = require('vinyl-source-stream'),
     buffer     = require('vinyl-buffer'),
     watchify   = require('watchify'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    slim       = require("gulp-slim"),
+    concat     = require('gulp-concat');
 
 function errorHandler (err) {
   util.log(util.colors.red('Error'), err.message);
   this.end();
 }
 
-var bundler = watchify(browserify({ entries: './assets/jsx/app.jsx', debug: true } , watchify.args));
-bundler.transform(reactify);
+gulp.task('slim', function(){
+  gulp.src("./src/slim/*.slim")
+    .pipe(slim({
+      pretty: true
+    }))
+    .pipe(gulp.dest("./dist/"));
+});
+
+gulp.task('scss',function(){
+  return sass('src/scss', {
+      style      : 'expand'
+    })
+    .pipe(gulp.dest('./src/css'));
+});
+
+gulp.task('concat', function() {
+  return gulp.src(
+    [
+      './src/css/main.css',
+      './bower_components/pure/pure-min.css',
+      './bower_components/pure-extras/css/pure-extras.css'
+    ]
+  )
+    .pipe(concat('all.css'))
+    .pipe(gulp.dest('./dist/assets/stylesheets'));
+});
 
 gulp.task('connect', function() {
   connect.server({
-    root: './',
+    root: './dist',
     livereload: true
   });
 });
 
+var bundler = watchify(browserify({ entries: './src/jsx/app.jsx', debug: true } , watchify.args));
+bundler.transform(reactify);
+
 gulp.task('reload', function () {
-  gulp.src(['./**/*.*', '!./public/**/*.js.map'])
+  gulp.src(['./src/**/*.*', '!./src/**/*.js.map'])
       .pipe(connect.reload());
-});
-
-
-gulp.task('scss',function(){
-  return sass('scss', {
-      style      : 'expand',
-      require    : ['bourbon', 'neat']
-    })
-    .pipe(gulp.dest('./public/css'));
 });
 
 gulp.task('build', function () {
@@ -44,15 +64,15 @@ gulp.task('build', function () {
       .pipe(source('app.js'))
         .pipe(buffer())
         .pipe(sourcemaps.init({ loadMaps: true  }))
-        .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest('./assets/javascripts'));
+        .pipe(sourcemaps.write('./src/js'))
+      .pipe(gulp.dest('./dist/assets/javascripts'));
 });
 
 gulp.task('watch', function () {
-  gulp.watch(['./scss/**.scss'], ['scss']);
-  gulp.watch(['./assets/jsx/*.jsx'], ['build']);
-  gulp.watch(['./**/**/*.*', '!./assets/javascripts/*.js.map'], ['reload']);
+  gulp.watch(['./src/slim/**.slim'], ['slim']);
+  gulp.watch(['./src/scss/**.scss'], ['scss', 'concat']);
+  gulp.watch(['./src/jsx/*.jsx'], ['build']);
+  gulp.watch(['./src/**/*.*', '!./src/js/*.js.map'], ['reload']);
 });
-
 
 gulp.task('default', ['build', 'connect', 'watch']);

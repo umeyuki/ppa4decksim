@@ -32,3 +32,4 @@ public/js/*.js
 public/css/
 public/pure*
 .sass-cache
+bower_components
