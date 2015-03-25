@@ -7,7 +7,8 @@ var gulp       = require('gulp'),
     source     = require('vinyl-source-stream'),
     buffer     = require('vinyl-buffer'),
     watchify   = require('watchify'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    ghPages = require('gulp-gh-pages');
 
 function errorHandler (err) {
   util.log(util.colors.red('Error'), err.message);
@@ -56,3 +57,7 @@ gulp.task('watch', function () {
 
 
 gulp.task('default', ['build', 'connect', 'watch']);
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
