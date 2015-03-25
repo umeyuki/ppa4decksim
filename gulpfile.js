@@ -9,7 +9,8 @@ var gulp       = require('gulp'),
     watchify   = require('watchify'),
     sourcemaps = require('gulp-sourcemaps'),
     slim       = require("gulp-slim"),
-    concat     = require('gulp-concat');
+    concat     = require('gulp-concat'),
+    ghPages = require('gulp-gh-pages');
 
 function errorHandler (err) {
   util.log(util.colors.red('Error'), err.message);
