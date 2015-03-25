@@ -49,36 +49,27 @@ h2.content-subhead {
     font-size: 16px;
   }
   span.about-event {
+    display: inline-block;
     margin-left:15px;
   }
 }
 
-table.result {
+.result {
   margin-top: 25px;
-  th {
-    text-align: center;
-    width: 150px;
-  }
-  th.event-order {
+  .event-order {
     text-align: center;
     width: 175px;
   }
-  th.traning {
+  .traning {
     text-align: center;
-    width: 80px;
-  }
-  td {
-  }
-  td.before {
-    text-align: left !important;
-  }
-  td.after {
-    text-align: right !important;
   }
   ul {
+    margin: 0 2px;
     padding-left: 2px;
+    display: inline-block;
     li {
       list-style-type:none;
+      display: inline-block;
     }
   }
 }
@@ -93,26 +84,28 @@ span.after {
   background-color: #FF570D;
 }
 span.skill {
-  background-color: #B6FF01;
+
 }
 span.special-skill {
   background-color: #e6b422;
 }
 
-
-.pure-badge-male {
+.member {
+  margin-right:10px;
+  font-size: 16px;
+  text-align: center;
+  width:95px;
+}
+.male {
     background-color: #77EEFF;
 }
-
-.pure-badge-female {
+.female {
   background-color: #9933CC;
 }
-
-.pure-badge-girlfriend {
+.girlfriend {
   background-color: #FF99FF;
 }
-
-.pure-badge-girlfriend-player {
+.girlfriend-player {
   background-color: #CC33FF;
 }
 
