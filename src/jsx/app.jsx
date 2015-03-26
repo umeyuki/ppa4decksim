@@ -61,10 +61,7 @@ var App = React.createClass({
 	                        "girlfriend": member.type === 2,
 				"girlfriend-player": member.type === 3
 			});
-      var eventTdClass = cx({
-        "before": member.event_order === 0,
-        "after":  member.event_order === 1
-      });
+
       var eventClass = cx({
 				"pure-badge": true,
         "before": member.event_order === 0,
