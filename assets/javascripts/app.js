@@ -52,7 +52,7 @@ var App = React.createClass({displayName: "App",
 						"後イベ ", this.state.after_event_count
 				), 
         React.createElement("span", {className: "about-event"}, 
-						"前イベ・後イベとは?"
+						"前イベ・後イベとは??"
 				)
     ), 
 		this.state.members.map(function(member) {
@@ -118,6 +118,7 @@ var App = React.createClass({displayName: "App",
 						React.createElement("span", {className: "pure-badge traning"}, "得意練習"), 
 						React.createElement("span", {className: "pure-badge skill"}, "練習コツ"), 
 						React.createElement("span", {className: "pure-badge special-skill"}, "金特・オリジナル変化球")
+
 					)
   			)
 			)
@@ -35051,4 +35052,4 @@ exports.Members =
 },{}]},{},[1])
 
 
-//# sourceMappingURL=src/js/app.js.map
+//# sourceMappingURL=app.js.map
