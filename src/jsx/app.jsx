@@ -18,6 +18,7 @@ var App = React.createClass({
 			this.setState({ options: DATA['Members']});
 		} else {
 			this.setState({ options: [] });
+			blur();
 		}
 		this.setState({ members: members } );
 		before=0;
@@ -40,6 +41,7 @@ var App = React.createClass({
       onOptionLabelClick={this.onLabelClick}
 			value={this.state.members}
 			multi={true}
+			noResultsText="イベキャラ選択が完了しました"
 			placeholder="イベキャラを選択してください"
 			options={this.state.options}
 			onChange={this.onChange} />

@@ -19,6 +19,7 @@ var App = React.createClass({displayName: "App",
 			this.setState({ options: DATA['Members']});
 		} else {
 			this.setState({ options: [] });
+			blur();
 		}
 		this.setState({ members: members } );
 		before=0;
@@ -41,6 +42,7 @@ var App = React.createClass({displayName: "App",
       onOptionLabelClick: this.onLabelClick, 
 			value: this.state.members, 
 			multi: true, 
+			noResultsText: "イベキャラ選択が完了しました", 
 			placeholder: "イベキャラを選択してください", 
 			options: this.state.options, 
 			onChange: this.onChange}), 
@@ -118,7 +120,6 @@ var App = React.createClass({displayName: "App",
 						React.createElement("span", {className: "pure-badge traning"}, "得意練習"), 
 						React.createElement("span", {className: "pure-badge skill"}, "練習コツ"), 
 						React.createElement("span", {className: "pure-badge special-skill"}, "金特・オリジナル変化球")
-
 					)
   			)
 			)
@@ -34506,7 +34507,7 @@ exports.Members =
   },
   {
     label: '大鐘餅太郎',
-    value: 'okanemochitaro',
+    value: 'ookanemochitaro',
     traning: '守備',
     skills: ['粘り打ち', 'ハイボールヒッター', '初級'],
     special_skills: ['左キラー'],
@@ -34609,7 +34610,7 @@ exports.Members =
     label: '友沢亮',
     value: 'tomosawaryo',
     traning: '肩力',
-    skills: ['パワーヒッター', 'アベレージヒッター'],
+    skills: ['パワーヒッター', 'アベレージヒッター', '肩力'],
     special_skills: ['安打製造機'],
     event_order: 1,
 		type: 0,
