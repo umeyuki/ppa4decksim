@@ -65,9 +65,10 @@ gulp.task('build', function () {
       .pipe(source('app.js'))
         .pipe(buffer())
         .pipe(sourcemaps.init({ loadMaps: true  }))
-        .pipe(sourcemaps.write('./src/js'))
+        .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest('./dist/assets/javascripts'));
 });
+
 
 gulp.task('watch', function () {
   gulp.watch(['./src/slim/**.slim'], ['slim']);

@@ -51,7 +51,7 @@ var App = React.createClass({
 						後イベ {this.state.after_event_count}
 				</span>
         <span className="about-event">
-						前イベ・後イベとは?
+						前イベ・後イベとは??
 				</span>
     </section>
 		{this.state.members.map(function(member) {
