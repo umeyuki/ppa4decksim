@@ -54,11 +54,11 @@ var App = React.createClass({
     </section>
 		{this.state.members.map(function(member) {
 			var memberClass  = cx({
-				"member": true,
-				"pure-badge": true,
-				"male": member.type === 0 ,
-        "female": member.type === 1,
-        "girlfriend": member.type === 2,
+                                "member": true,
+                                "pure-badge": true,
+                                "male": member.type === 0 ,
+                                "female": member.type === 1,
+	                        "girlfriend": member.type === 2,
 				"girlfriend-player": member.type === 3
 			});
       var eventTdClass = cx({
