@@ -54,7 +54,7 @@ exports.Members =
   },
   {
     label: '大鐘餅太郎',
-    value: 'okanemochitaro',
+    value: 'ookanemochitaro',
     traning: '守備',
     skills: ['粘り打ち', 'ハイボールヒッター', '初級'],
     special_skills: ['左キラー'],
@@ -157,7 +157,7 @@ exports.Members =
     label: '友沢亮',
     value: 'tomosawaryo',
     traning: '肩力',
-    skills: ['パワーヒッター', 'アベレージヒッター'],
+    skills: ['パワーヒッター', 'アベレージヒッター', '肩力'],
     special_skills: ['安打製造機'],
     event_order: 1,
 		type: 0,
