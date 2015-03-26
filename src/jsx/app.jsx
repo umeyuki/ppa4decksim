@@ -29,8 +29,8 @@ var App = React.createClass({
 				after++;
 			}
 		}
-		this.setState( { before_event_count: before } )
-			this.setState( { after_event_count: after  } )
+		this.setState( { before_event_count: before } );
+		this.setState( { after_event_count: after  } );
 	},
 	render: function() {
     var cx = React.addons.classSet;
