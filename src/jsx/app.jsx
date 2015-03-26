@@ -18,7 +18,6 @@ var App = React.createClass({
 			this.setState({ options: DATA['Members']});
 		} else {
 			this.setState({ options: [] });
-			blur();
 		}
 		this.setState({ members: members } );
 		before=0;
