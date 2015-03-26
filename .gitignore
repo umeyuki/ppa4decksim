@@ -33,4 +33,3 @@ public/css/
 public/pure*
 .sass-cache
 bower_components
-dist
