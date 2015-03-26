@@ -51,9 +51,6 @@ var App = React.createClass({
         <span className="pure-button after">
 						後イベ {this.state.after_event_count}
 				</span>
-        <span className="about-event">
-						前イベ・後イベとは??
-				</span>
     </section>
 		{this.state.members.map(function(member) {
 			var memberClass  = cx({
