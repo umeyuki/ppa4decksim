@@ -68,7 +68,7 @@ var App = React.createClass({
         "after":  member.event_order === 1
       });
       var traningClass = cx({
-         "pure-badge": member.traning,
+        "pure-badge": member.traning,
         "traning": true
       });
       var skillClass = cx({
