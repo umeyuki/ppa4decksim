@@ -89,7 +89,7 @@ exports.Members =
 		skills: ['バント', '送球', 'キャッチャー'],
 		special_skills: ['ささやき戦術'],
 		event_order: 1,
-		type: 0,
+		type: 1,
 		match_bonus: false
   },
   {
