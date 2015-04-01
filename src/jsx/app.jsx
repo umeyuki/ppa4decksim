@@ -51,6 +51,9 @@ var App = React.createClass({
         <span className="pure-button after">
             後イベ {this.state.after_event_count}
         </span>
+				<div>
+						<a href="http://pawapurolabo.tumblr.com/post/115213099093">前イベ・後イベとは?</a>
+				</div>
     </section>
     {this.state.members.map(function(member) {
       var memberClass  = cx({
