@@ -51,7 +51,10 @@ var App = React.createClass({displayName: "App",
         ), 
         React.createElement("span", {className: "pure-button after"}, 
             "後イベ ", this.state.after_event_count
-        )
+        ), 
+				React.createElement("div", null, 
+						React.createElement("a", {href: "http://pawapurolabo.tumblr.com/post/115213099093"}, "前イベ・後イベとは?")
+				)
     ), 
     this.state.members.map(function(member) {
       var memberClass  = cx({
@@ -69,7 +72,7 @@ var App = React.createClass({displayName: "App",
         "after":  member.event_order === 1
       });
       var traningClass = cx({
-         "pure-badge": member.traning,
+        "pure-badge": member.traning,
         "traning": true
       });
       var skillClass = cx({
