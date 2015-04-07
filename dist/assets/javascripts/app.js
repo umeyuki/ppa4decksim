@@ -34459,8 +34459,8 @@ exports.Members =
     special_skills: ['怪物球威'],
     event_order: 1,
     girl_friend: false,
-		type: 1,
-		match_bonus: false
+    type: 1,
+    match_bonus: false
   },
   {
     label: '明星雪華',
@@ -34470,8 +34470,8 @@ exports.Members =
     special_skills: ['一球入魂', '脅威の切れ味'],
     event_order: 1,
     girl_friend: true,
-		type: 2,
-		match_bonus: false
+    type: 2,
+    match_bonus: false
   },
   {
     label: '阿畑やすし',
@@ -34480,8 +34480,8 @@ exports.Members =
     skills: [],
     special_skills: ['オリジナル変化球'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '猪狩進',
@@ -34490,8 +34490,8 @@ exports.Members =
     skills: ['守備', 'アベレージヒッター', '広角打法', 'キャッチャー'],
     special_skills: ['球界の頭脳'],
     event_order: 1,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '猪狩守',
@@ -34500,8 +34500,8 @@ exports.Members =
     skills: ['球速', 'ピンチ', 'リリース'],
     special_skills: ['ライジングキャノン', 'or','ライジングショット'],
     event_order: 1,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '大鐘餅太郎',
@@ -34510,8 +34510,8 @@ exports.Members =
     skills: ['粘り打ち', 'ハイボールヒッター', '初級'],
     special_skills: ['左キラー'],
     event_order: 1,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '橘みずき',
@@ -34520,8 +34520,8 @@ exports.Members =
     skills: ['クロスファイアー'],
     special_skills: ['クレッセントムーン'],
     event_order: 0,
-		type: 1,
-		match_bonus: false
+    type: 1,
+    match_bonus: false
   },
   {
     label:  '早川あおい',
@@ -34530,18 +34530,18 @@ exports.Members =
     skills: ['緩急'],
     special_skills: ['マリンボール'],
     event_order: 1,
-		type: 1,
-		match_bonus: false
+    type: 1,
+    match_bonus: false
   },
   {
-		label: '六道聖',
-		value: 'rikudouhijiri',
-		traning: '守備',
-		skills: ['バント', '送球', 'キャッチャー'],
-		special_skills: ['ささやき戦術'],
-		event_order: 1,
-		type: 0,
-		match_bonus: false
+    label: '六道聖',
+    value: 'rikudouhijiri',
+    traning: '守備',
+    skills: ['バント', '送球', 'キャッチャー'],
+    special_skills: ['ささやき戦術'],
+    event_order: 1,
+    type: 0,
+    match_bonus: false
   },
   {
     label: '山口賢',
@@ -34550,8 +34550,8 @@ exports.Members =
     skills: ['対ピンチ', '勝ち運'],
     special_skills: ['強新三'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '鈴本大輔',
@@ -34560,8 +34560,8 @@ exports.Members =
     skills: ['対左打者', '打たれ強さ', 'ノビ', 'クリック', '調子安定', '牽制', 'リリース', '打球反応', '球持ち', '低め'],
     special_skills: ['精密機械'],
     event_order: 0,
-		type: 0,
-		match_bonus: true
+    type: 0,
+    match_bonus: true
   },
   {
     label: '滝本太郎',
@@ -34570,8 +34570,8 @@ exports.Members =
     skills: ['パワーヒッター', 'アベレージヒッター', '広角打法', '体当たり'],
     special_skills: ['アーチスト','or', '安打製造機'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '青葉春人',
@@ -34580,8 +34580,8 @@ exports.Members =
     skills: ['重い球', 'キレ', '対強打者', '奪三振', '対ピンチ', '闘志'],
     special_skills: ['超真魔球改'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '佐久間博',
@@ -34590,8 +34590,8 @@ exports.Members =
     skills: ['アベレージヒッター', '内野安打', '流し打ち'],
     special_skills: ['芸術的流し打ち'],
     event_order: 1,
-		type: 0,
-		match_bonus: true
+    type: 0,
+    match_bonus: true
 
   },
   {
@@ -34601,8 +34601,8 @@ exports.Members =
     skills: ['重い球', 'ノビ'],
     special_skills: ['怪物球威'],
     event_order: 1,
-		type: 0,
-		match_bonus: 1
+    type: 0,
+    match_bonus: 1
   },
   {
     label: '友沢亮',
@@ -34611,8 +34611,8 @@ exports.Members =
     skills: ['パワーヒッター', 'アベレージヒッター'],
     special_skills: ['安打製造機'],
     event_order: 1,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '蛇島桐人',
@@ -34621,8 +34621,8 @@ exports.Members =
     skills: ['安定感', 'ローボールヒッター', '守備職人', 'ムード'],
     special_skills: ['魔術師'],
     event_order: 1,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '矢部田亜希子',
@@ -34631,8 +34631,8 @@ exports.Members =
     skills: ['盗塁', '走塁', '送球', 'バント', '内野安打'],
     special_skills: ['切り込み隊長'],
     event_order: 1,
-		type: 1,
-		match_bonus: false
+    type: 1,
+    match_bonus: false
   },
   {
     label: '美藤千尋',
@@ -34641,8 +34641,8 @@ exports.Members =
     skills: ['アベレージヒッター', '粘り打ち', '逆境', 'チャンス'],
     special_skills: ['安打製造機'],
     event_order: 1,
-		type: 1,
-		match_bonus: false
+    type: 1,
+    match_bonus: false
   },
   {
     label: '川星ほむら',
@@ -34651,8 +34651,8 @@ exports.Members =
     skills: ['体当たり', 'ムード', 'チャンス', '固め打ち', '内野安打', '意外性', 'いぶし銀', 'ヘッドスライティング'],
     special_skills: ['気迫ヘッド'],
     event_order: 0,
-		type: 1,
-		match_bonus: false
+    type: 1,
+    match_bonus: false
   },
   {
     label: '武秀英',
@@ -34661,8 +34661,8 @@ exports.Members =
     skills: ['ミート', 'ローボールヒッター', 'チャンス', 'パワーヒッター'],
     special_skills: ['勝負師'],
     event_order: 1,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '三森右京',
@@ -34671,8 +34671,8 @@ exports.Members =
     skills: ['盗塁', '走塁', '内野安打'],
     special_skills: ['電光石火'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '三森左京',
@@ -34681,8 +34681,8 @@ exports.Members =
     skills: ['盗塁', '走塁', '内野安打'],
     special_skills: ['高速ベースラン'],
     event_order: 1,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '浜崎庄司',
@@ -34691,8 +34691,8 @@ exports.Members =
     skills: ['尻上がり', '闘志'],
     special_skills: ['不屈の魂'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: 'ブロンコ=リー',
@@ -34701,8 +34701,8 @@ exports.Members =
     skills: ['チャンス', 'ケガしにくさ', '流し打ち', '粘り打ち', '意外性'],
     special_skills: ['アーチスト'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '夏野向日葵',
@@ -34711,8 +34711,8 @@ exports.Members =
     skills: ['ローボールヒッター', '意外性'],
     special_skills: ['ストレート送球'],
     event_order: 1,
-		type: 1,
-		match_bonus: true
+    type: 1,
+    match_bonus: true
   },
   {
     label: '星井スバル',
@@ -34721,8 +34721,8 @@ exports.Members =
     skills: ['コントロール', '尻上がり', '逃げ球'],
     special_skills: ['スタードライブ'],
     event_order: 0,
-		type: 0,
-		match_bonus: true
+    type: 0,
+    match_bonus: true
   },
   {
     label: '宇度幹久',
@@ -34731,8 +34731,8 @@ exports.Members =
     skills: ['パワーヒッター'],
     special_skills: ['強心臓', '重戦車'],
     event_order: 1,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '小田切巧',
@@ -34741,8 +34741,8 @@ exports.Members =
     skills: ['守備職人', '送球'],
     special_skills: ['代打の神様', '不屈の精神'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '京野小筆',
@@ -34751,8 +34751,8 @@ exports.Members =
     skills: [],
     special_skills: ['アーチスト', '安打製造機', '鉄腕', '精密機械'],
     event_order: 0,
-		type: 2,
-		match_bonus: false
+    type: 2,
+    match_bonus: false
   },
   {
     label: '才賀侑人',
@@ -34761,8 +34761,8 @@ exports.Members =
     skills: ['パワーヒッター', '広角打法', '固め打ち'],
     special_skills: ['一球入魂'],
     event_order: 1,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '烏丸剛充',
@@ -34771,8 +34771,8 @@ exports.Members =
     skills: ['ノビ', '打球反応'],
     special_skills: ['不屈の魂'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '春野千優',
@@ -34781,8 +34781,8 @@ exports.Members =
     skills: [],
     special_skills: ['鉄人', '走者釘付'],
     event_order: 1,
-		type: 2,
-		match_bonus: false
+    type: 2,
+    match_bonus: false
   },
   {
     label: '田中将大',
@@ -34791,8 +34791,8 @@ exports.Members =
     skills: ['ピンチ', '尻上がり', '打たれ強さ', 'ノビ', 'キレ', '逃げ球', '奪三振', '打球反応', '勝ち運', '闘志', '威圧感'],
     special_skills: ['エアロスプリット'],
     event_order: 1,
-		type: 0,
-		match_bonus: true
+    type: 0,
+    match_bonus: true
   },
   {
     label: '美園千花',
@@ -34801,8 +34801,8 @@ exports.Members =
     skills: ['キャッチャー', '意外性'],
     special_skills: ['球界の頭脳'],
     event_order: 1,
-		type: 3,
-		match_bonus: false
+    type: 3,
+    match_bonus: false
   },
   {
     label: '小嵐リョウ',
@@ -34811,8 +34811,8 @@ exports.Members =
     skills: ['チャンス', '走塁', 'バント', '守備職人'],
     special_skills: ['魔術師'],
     event_order: 0,
-		type: 3,
-		match_bonus: false
+    type: 3,
+    match_bonus: false
   },
   {
     label: '八尺巫女子',
@@ -34821,8 +34821,8 @@ exports.Members =
     skills: ['粘り打ち', '内野安打'],
     special_skills: ['切り込み隊長'],
     event_order: 0,
-		type: 3,
-		match_bonus: false
+    type: 3,
+    match_bonus: false
   },
   {
     label: '大西=ハリソン',
@@ -34831,8 +34831,8 @@ exports.Members =
     skills: ['ポーカーフェイス'],
     special_skills: ['鉄椀'],
     event_order: 1,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '銭形乱蔵',
@@ -34841,8 +34841,8 @@ exports.Members =
     skills: ['対ピンチ', '対左投手', '打たれ強さ'],
     special_skills: ['強心臓'],
     event_order: 1,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '鋼毅',
@@ -34851,8 +34851,8 @@ exports.Members =
     skills: ['ノビ', '対ピンチ'],
     special_skills: ['怪童', 'アーチスト'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '嵐丸士郎',
@@ -34861,8 +34861,8 @@ exports.Members =
     skills: ['対強打者'],
     special_skills: ['鉄人'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '久方怜',
@@ -34871,8 +34871,8 @@ exports.Members =
     skills: [],
     special_skills: ['脅威の切れ味'],
     event_order: 1,
-		type: 0,
-		match_bonus: true
+    type: 0,
+    match_bonus: true
   },
   {
     label: '鶴屋勝',
@@ -34881,8 +34881,8 @@ exports.Members =
     skills: ['対左打者', 'ノビ'],
     special_skills: ['本塁打厳禁'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '太刀川広巳',
@@ -34891,8 +34891,8 @@ exports.Members =
     skills: ['重い球', 'ノビ', '尻上がり', '対強打者'],
     special_skills: ['怪物脅威'],
     event_order: 1,
-		type: 1,
-		match_bonus: false
+    type: 1,
+    match_bonus: false
   },
   {
     label: '小平陽向',
@@ -34901,8 +34901,8 @@ exports.Members =
     skills: ['アベレージヒッター', '流し打ち', '内野安打', '走塁'],
     special_skills: ['切り込み隊長'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '茶来元気',
@@ -34911,8 +34911,8 @@ exports.Members =
     skills: ['チャンス', '固め打ち'],
     special_skills: ['切り込み隊長'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '鮫島条太郎',
@@ -34921,8 +34921,8 @@ exports.Members =
     skills: ['流し打ち', 'サヨナラ男', '逆境', 'ヘッドスライティング'],
     special_skills: ['一球入魂'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '小豪月剛',
@@ -34931,8 +34931,8 @@ exports.Members =
     skills: [],
     special_skills: ['ドクターK', '一球入魂'],
     event_order: 1,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '中之島幸宏',
@@ -34941,8 +34941,8 @@ exports.Members =
     skills: ['チャンス', '盗塁', 'アベレージヒッター', '流し打ち'],
     special_skills: ['電光石火'],
     event_order: 1,
-		type: 0,
-		match_bonus: true
+    type: 0,
+    match_bonus: true
   },
   {
     label: '田中山太郎',
@@ -34951,8 +34951,8 @@ exports.Members =
     skills: ['バント'],
     special_skills: ['魔術師'],
     event_order: 1,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '有村佐治',
@@ -34961,8 +34961,8 @@ exports.Members =
     skills: ['ブロック', 'ローボールヒッター', 'いぶし銀', '意外性', '送球'],
     special_skills: ['鉄人'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '香本富久雄',
@@ -34971,8 +34971,8 @@ exports.Members =
     skills: ['チャンス', 'キャッチャー'],
     special_skills: ['鉄の壁'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '小鷹美麗',
@@ -34981,8 +34981,8 @@ exports.Members =
     skills: ['バント職人', '対エース', '意外性', '逆境', 'チャンス', 'キャッチャー'],
     special_skills: ['ストライク送球'],
     event_order: 0,
-		type: 1,
-		match_bonus: false
+    type: 1,
+    match_bonus: false
   },
   {
     label: '矢部明雄',
@@ -34991,8 +34991,8 @@ exports.Members =
     skills: ['ヘッドスライティング', '盗塁', '走塁'],
     special_skills: ['高速ベースラン'],
     event_order: 1,
-		type: 0,
-		match_bonus: true
+    type: 0,
+    match_bonus: true
   },
   {
     label: '猛田慶次',
@@ -35001,8 +35001,8 @@ exports.Members =
     skills: ['チャンス', 'サヨナラ男', '逆境', '代打', '意外性', '体当たり'],
     special_skills: ['勝負師'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '渋谷秀喜',
@@ -35011,8 +35011,8 @@ exports.Members =
     skills: ['サヨナラ男', '意外性'],
     special_skills: ['伝説のサヨナラ男'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '鎌刈善二',
@@ -35021,8 +35021,8 @@ exports.Members =
     skills: ['アベレージヒッター', 'ローボールヒッター', '流し打ち'],
     special_skills: ['一球入魂'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   },
   {
     label: '城井伯斎',
@@ -35031,8 +35031,8 @@ exports.Members =
     skills: ['守備職人', '送球', '満塁男'],
     special_skills: ['切り込み隊長', '不屈の精神'],
     event_order: 1,
-		type: 0,
-		match_bonus: true
+    type: 0,
+    match_bonus: true
   },
   {
     label: '九十九宇宙',
@@ -35041,10 +35041,285 @@ exports.Members =
     skills: ['流し打ち', 'ハイボールヒッター', 'レーザービーム'],
     special_skills: ['高速レーザー'],
     event_order: 0,
-		type: 0,
-		match_bonus: false
+    type: 0,
+    match_bonus: false
   }
+];
 
+exports.Combo =
+[
+  {
+    name: 'あこがれの大西さん',
+    members:
+    {
+      onishiharison: true,
+      arashimarushiro: true
+    }
+  },
+  {
+    name: '因縁',
+    members:
+    {
+      takimototaro: true,
+      hisakatarei: true
+    }
+  },
+  {
+    name: 'オレたちは双子じゃない',
+    members:
+    {
+      mitumorisakyo: true,
+      mitumoriukyo: true
+    }
+  },
+  {
+    name: '究極VS至高',
+    members:
+    {
+      tachibanamizuki: true,
+      rikudouhijiri: true
+    }
+  },
+  {
+    name: '兄弟の事情',
+    members:
+    {
+      ikarimamoru: true,
+      ikarisusumu: true
+    }
+  },
+  {
+    name: 'ひまわりと月見草',
+    members:
+    {
+      shibutanihideki: true,
+      nakanoshimayukihiro: true
+    }
+  },
+  {
+    name: '野球vsソフトボール',
+    members:
+    {
+      bitochihiro: true,
+      kawahoshihomura: true
+    }
+  },
+  {
+    name: 'NGワード',
+    members:
+    {
+      hoshiisubaru: true,
+      saigayuto: true
+    }
+  },
+  {
+    name: 'エリートと秀才',
+    members:
+    {
+      hoshiisubaru: true,
+      karasumatakemitsu: true
+    }
+  },
+  {
+    name: 'クセモノズ',
+    members:
+    {
+      odagiritakumi: true,
+      kodairahinata: true
+    }
+  },
+  {
+    name: '意外な2人',
+    members:
+    {
+      udomikihisa: true,
+      karasumatakemitsu: true
+    }
+  },
+  {
+    name: '投手討論',
+    members:
+    {
+      hayakawaaoi: true,
+      tachikawahiromi: true
+    }
+  },
+  {
+    name: '猛特訓?',
+    members:
+    {
+      tomosawaryo: true,
+      hebishimakirito: true
+    }
+  },
+  {
+    name: 'アイツには負けない!',
+    members:
+    {
+      tomosawaryo: true,
+      ikarimamoru: true
+    }
+  },
+  {
+    name: '最強の特訓メニュー',
+    members:
+    {
+      tomosawaryo: true,
+      turuyamasaru: true
+    }
+  },
+  {
+    name: 'ストイックツー',
+    members:
+    {
+      tomosawaryo: true,
+      zenigataranzo: true
+    }
+  },
+  {
+    name: 'たこ燒きパーティー',
+    members:
+    {
+      abatayasushi: true,
+      tsukumotakaoki: true
+    }
+  },
+  {
+    name: 'リベラルな捕手',
+    members:
+    {
+      rikudouhijiri: true,
+      kodakamirei: true
+    }
+  },
+  {
+    name: 'ニコイチ',
+    members:
+    {
+      tachikawahiromi: true,
+      kodakamirei: true
+    }
+  },
+  {
+    name: 'トクベツな関係',
+    members:
+    {
+      bitochihiro: true,
+      kodakamirei: true
+    }
+  },
+  {
+    name: '美藤vsアンヌ',
+    members:
+    {
+      annu: true,
+      bitochihiro: true
+    }
+  },
+  {
+    name: 'ボケ合戦',
+    members:
+    {
+      akehoshisetuka: true,
+      hasshakumikoko: true
+    }
+  },
+  {
+    name: 'チャレンジ精神',
+    members:
+    {
+      akehoshisetuka: true,
+      misonochika: true
+    }
+  },
+  {
+    name: 'あばれ八尺と小旋風',
+    members:
+    {
+      koarashiryo: true,
+      hasshakumikoko: true
+    }
+  },
+  {
+    name: 'ケンカするほど仲がいい?',
+    members:
+    {
+      koarashiryo: true,
+      misonochika: true,
+    }
+  },
+  {
+    name: '女性という生き方',
+    members:
+    {
+      natunohimawari: true,
+      kodakamirei: true
+    }
+  },
+  {
+    name: 'スイーツ番長',
+    members:
+    {
+      natunohimawari: true,
+      yabetaakiko: true
+    }
+  },
+  {
+    name: 'テリブルトリオ',
+    members:
+    {
+      hayakawaaoi: true,
+      tachibanamizuki: true,
+      rikudouhijiri: true
+    }
+  },
+  {
+    name: 'セレブなレストラン',
+    members:
+    {
+      ikarimamoru: true,
+      okanemochitaro: true,
+      tachibanamizuki: true
+    }
+  },
+  {
+    name: '憧れです!',
+    members:
+    {
+      annu: true,
+      tachikawahiromi: true,
+      hayakawaaoi: true
+    }
+  },
+  {
+    name: 'ハイパートレーニング',
+    members:
+    {
+      tomosawaryo: true,
+      charaigenki: true,
+      tachikawahiromi: true
+    }
+  },
+  {
+    name: '女子パワー',
+    members:
+    {
+      tachibanamizuki: true,
+      rikudouhijiri: true,
+      rikudouhijiri: true,
+      kodakamirei: true
+    }
+  },
+  {
+    name: 'みんなでビーチバレー',
+    members:
+    {
+      akehoshisetuka: true,
+      hasshakumikoko: true,
+      koarashiryo: true,
+      misonochika: true
+    }
+  }
 ];
 
 
