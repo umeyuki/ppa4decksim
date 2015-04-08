@@ -1,94 +1,110 @@
 var React = require('react/addons'),
-		Select = require('react-select');
+    Select = require('react-select');
 var DATA = require('./data.jsx');
 var App = React.createClass({
   getInitialState: function() {
-		return {
-			options: DATA['Members'],
-			members: [],
-			before_event_count: 0,
-			after_event_count:  0,
-		};
-	},
-	onLabelClick: function (data, event) {
-		console.log(data);
-	},
-	onChange: function (value, members) {
-		if ( members.length < 6 ) {
-			this.setState({ options: DATA['Members']});
-		} else {
-			this.setState({ options: [] });
-		}
-		this.setState({ members: members } );
-		before=0;
-		after=0;
-		for (var i=0; i < members.length; i++) {
-			if ( members[i].event_order == 0 ) {
-				before++;
-			} else {
-				after++;
+    return {
+      options: DATA['Members'],
+      members: [],
+      combos: [],
+      before_event_count: 0,
+      after_event_count:  0,
+    };
+  },
+  onLabelClick: function (data, event) {
+    console.log(data);
+  },
+  onChange: function (value, members) {
+    if ( members.length < 6 ) {
+      this.setState({ options: DATA['Members']});
+    } else {
+      this.setState({ options: [] });
+    }
+    this.setState({ members: members } );
+    before=0;
+    after=0;
+    for (var i=0; i < members.length; i++) {
+      if ( members[i].event_order == 0 ) {
+        before++;
+      } else {
+        after++;
+      }
+    }
+    this.setState( { before_event_count: before } );
+    this.setState( { after_event_count: after  } );
+    for (var i=0; i < DATA['Combos'].length; i++) {
+			combo = DATA['Combos'][i];
+			number_of_members = Object.keys(combo['members']).length;
+			count = 0;
+			for ( var m in combo.members) {
+				for (var j=0; j < members.length; j++ ) {
+					if ( m === members[j]['value']) {
+						count++;
+					}
+				}
 			}
-		}
-		this.setState( { before_event_count: before } )
-			this.setState( { after_event_count: after  } )
-	},
-	render: function() {
+
+			if ( count === number_of_members ) {
+				this.setState({ combos: this.state.combos.concat([combo])} );
+			}
+    }
+  },
+  render: function() {
     var cx = React.addons.classSet;
     return <section>
-	  <label>{this.props.label}</label>
-	  <Select
+    <label>{this.props.label}</label>
+		<p>kokodayo  {this.state.combos}</p>
+    <Select
       onOptionLabelClick={this.onLabelClick}
-			value={this.state.members}
-			multi={true}
-			placeholder="イベキャラを選択してください"
-			options={this.state.options}
-			onChange={this.onChange} />
+      value={this.state.members}
+      multi={true}
+      noResultsText="イベキャラ選択が完了しました"
+      placeholder="イベキャラを選択してください"
+      options={this.state.options}
+      onChange={this.onChange} />
     <section className="event-count">
         <span className="pure-button before">
-						前イベ {this.state.before_event_count}
-				</span>
+            前イベ {this.state.before_event_count}
+        </span>
         <span className="pure-button after">
-						後イベ {this.state.after_event_count}
-				</span>
-        <span className="about-event">
-						前イベ・後イベとは?
-				</span>
+            後イベ {this.state.after_event_count}
+        </span>
+				<div>
+						<a href="http://pawapurolabo.tumblr.com/post/115213099093">前イベ・後イベとは?</a>
+				</div>
     </section>
-		{this.state.members.map(function(member) {
-			var memberClass  = cx({
-				"member": true,
-				"pure-badge": true,
-				"male": member.type === 0 ,
+    {this.state.members.map(function(member) {
+      var memberClass  = cx({
+        "member": true,
+        "pure-badge": true,
+        "male": member.type === 0 ,
         "female": member.type === 1,
         "girlfriend": member.type === 2,
-				"girlfriend-player": member.type === 3
-			});
-      var eventTdClass = cx({
-        "before": member.event_order === 0,
-        "after":  member.event_order === 1
+        "girlfriend-player": member.type === 3
       });
+
       var eventClass = cx({
-				"pure-badge": true,
+        "pure-badge": true,
         "before": member.event_order === 0,
         "after":  member.event_order === 1
       });
       var traningClass = cx({
- 				"pure-badge": member.traning,
-				"traning": true
+        "pure-badge": member.traning,
+        "traning": true
       });
       var skillClass = cx({
-				"pure-badge": member.skills.length > 0,
-				"skill": true
+        "pure-badge": member.skills.length > 0,
+        "skill": true
       });
       return <div className="pure-g result">
-			<div className="pure-u-1-1">
+      <div className="pure-u-1-1">
       <span className={memberClass}>{member.label}</span>
       <span className={eventClass}>
-			  {member.event_order === 0 ? "前イベ" : "後イベ"}
-			</span>
+        {member.event_order === 0 ? "前イベ" : "後イベ"}
+      </span>
       <span className={traningClass}>
-  			{member.traning}
-			</span>
+        {member.traning}
+      </span>
       <ul>
       {member.skills.map(function(skill) {
         return <li><span className={skillClass}>{skill}</span></li>;
@@ -100,34 +116,31 @@ var App = React.createClass({
       })}
       </ul>
       </div>
-			</div>
-		 }, this)}
-			<hr/>
-			<section className="pure-g hint">
-				<div className="pure-u-1-1">
-				  <div>
-						<span className="pure-badge male">男性</span>
-						<span className="pure-badge female">女性</span>
-						<span className="pure-badge girlfriend">彼女</span>
-						<span className="pure-badge girlfriend-player">選手兼彼女</span>
-					</div>
-					<div>
-						<span className="pure-badge before">前イベ</span>
-						<span className="pure-badge after">後イベ</span>
-						<span className="pure-badge traning">得意練習</span>
-						<span className="pure-badge skill">練習コツ</span>
-						<span className="pure-badge special-skill">金特・オリジナル変化球</span>
-					</div>
-  			</div>
-			</section>
-
-		</section>
-	}
+      </div>
+     }, this)}
+      <hr/>
+      <section className="pure-g hint">
+        <div className="pure-u-1-1">
+          <div>
+            <span className="pure-badge male">男性</span>
+            <span className="pure-badge female">女性</span>
+            <span className="pure-badge girlfriend">彼女</span>
+            <span className="pure-badge girlfriend-player">選手兼彼女</span>
+          </div>
+          <div>
+            <span className="pure-badge before">前イベ</span>
+            <span className="pure-badge after">後イベ</span>
+            <span className="pure-badge traning">得意練習</span>
+            <span className="pure-badge skill">練習コツ</span>
+            <span className="pure-badge special-skill">金特・オリジナル変化球</span>
+          </div>
+        </div>
+      </section>
+    </section>
+  }
 });
 
-
-		React.render(
-			<App/>
-			,
-			document.getElementById('app')
-		);
+React.render(
+  <App/>,
+  document.getElementById('app')
+);

@@ -38,7 +38,7 @@ exports.Members =
     traning: '守備',
     skills: ['守備', 'アベレージヒッター', '広角打法', 'キャッチャー'],
     special_skills: ['球界の頭脳'],
-    event_order: 1,
+    event_order: 0,
     type: 0,
     match_bonus: false
   },
@@ -54,7 +54,7 @@ exports.Members =
   },
   {
     label: '大鐘餅太郎',
-    value: 'okanemochitaro',
+    value: 'ookanemochitaro',
     traning: '守備',
     skills: ['粘り打ち', 'ハイボールヒッター', '初級'],
     special_skills: ['左キラー'],
@@ -89,7 +89,7 @@ exports.Members =
     skills: ['バント', '送球', 'キャッチャー'],
     special_skills: ['ささやき戦術'],
     event_order: 1,
-    type: 0,
+    type: 1,
     match_bonus: false
   },
   {
@@ -157,7 +157,7 @@ exports.Members =
     label: '友沢亮',
     value: 'tomosawaryo',
     traning: '肩力',
-    skills: ['パワーヒッター', 'アベレージヒッター'],
+    skills: ['パワーヒッター', 'アベレージヒッター', '肩力'],
     special_skills: ['安打製造機'],
     event_order: 1,
     type: 0,
@@ -592,10 +592,50 @@ exports.Members =
     event_order: 0,
     type: 0,
     match_bonus: false
+  },
+  {
+    label: '沢村栄純',
+    value: 'sawamuraeijyun',
+    traning: 'スタミナ',
+    skills: ['リリース', '闘志', '球持ち', 'クロスファイアー', '対ピンチ'],
+    special_skills: ['変幻自在', '左キラー'],
+    event_order: 1,
+    type: 0,
+    match_bonus: false
+  },
+  {
+    label: '御幸一也',
+    value: 'miyukikazuya',
+    traning: '守備',
+    skills: ['肩力', 'キャッチャー'],
+    special_skills: ['球界の頭脳', '走者釘付け'],
+    event_order: 1,
+    type: 0,
+    match_bonus: false
+  },
+  {
+    label: '降谷暁',
+    value: 'furuyaakatuki',
+    traning: '球速',
+    skills: ['重い球', '奪三振'],
+    special_skills: ['怪童', '勝負師'],
+    event_order: 0,
+    type: 0,
+    match_bonus: false
+  },
+  {
+    label: '小湊春市',
+    value: 'kominatoharuichi',
+    traning: '打撃',
+    skills: ['チャンス', '固め打ち', 'アベレージヒッター'],
+    special_skills: ['安打製造機', '本塁打厳禁'],
+    event_order: 0,
+    type: 0,
+    match_bonus: false
   }
 ];
 
-exports.Combo =
+exports.Combos =
 [
   {
     name: 'あこがれの大西さん',
@@ -855,7 +895,7 @@ exports.Combo =
     {
       tachibanamizuki: true,
       rikudouhijiri: true,
-      rikudouhijiri: true,
+      tachikawahiromi: true,
       kodakamirei: true
     }
   },
@@ -869,4 +909,5 @@ exports.Combo =
       misonochika: true
     }
   }
+
 ];

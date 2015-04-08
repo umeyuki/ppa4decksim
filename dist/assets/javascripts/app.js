@@ -1,95 +1,111 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var React = require('react/addons'),
-		Select = require('react-select');
+    Select = require('react-select');
 var DATA = require('./data.jsx');
 var App = React.createClass({displayName: "App",
   getInitialState: function() {
-		return {
-			options: DATA['Members'],
-			members: [],
-			before_event_count: 0,
-			after_event_count:  0,
-		};
-	},
-	onLabelClick: function (data, event) {
-		console.log(data);
-	},
-	onChange: function (value, members) {
-		if ( members.length < 6 ) {
-			this.setState({ options: DATA['Members']});
-		} else {
-			this.setState({ options: [] });
-		}
-		this.setState({ members: members } );
-		before=0;
-		after=0;
-		for (var i=0; i < members.length; i++) {
-			if ( members[i].event_order == 0 ) {
-				before++;
-			} else {
-				after++;
+    return {
+      options: DATA['Members'],
+      members: [],
+      combos: [],
+      before_event_count: 0,
+      after_event_count:  0,
+    };
+  },
+  onLabelClick: function (data, event) {
+    console.log(data);
+  },
+  onChange: function (value, members) {
+    if ( members.length < 6 ) {
+      this.setState({ options: DATA['Members']});
+    } else {
+      this.setState({ options: [] });
+    }
+    this.setState({ members: members } );
+    before=0;
+    after=0;
+    for (var i=0; i < members.length; i++) {
+      if ( members[i].event_order == 0 ) {
+        before++;
+      } else {
+        after++;
+      }
+    }
+    this.setState( { before_event_count: before } );
+    this.setState( { after_event_count: after  } );
+    for (var i=0; i < DATA['Combos'].length; i++) {
+			combo = DATA['Combos'][i];
+			number_of_members = Object.keys(combo['members']).length;
+			count = 0;
+			for ( var m in combo.members) {
+				for (var j=0; j < members.length; j++ ) {
+					if ( m === members[j]['value']) {
+						count++;
+					}
+				}
 			}
-		}
-		this.setState( { before_event_count: before } )
-			this.setState( { after_event_count: after  } )
-	},
-	render: function() {
+
+			if ( count === number_of_members ) {
+				this.setState({ combos: this.state.combos.concat([combo])} );
+			}
+    }
+  },
+  render: function() {
     var cx = React.addons.classSet;
     return React.createElement("section", null, 
-	  React.createElement("label", null, this.props.label), 
-	  React.createElement(Select, {
+    React.createElement("label", null, this.props.label), 
+		React.createElement("p", null, "kokodayo  ", this.state.combos), 
+    React.createElement(Select, {
       onOptionLabelClick: this.onLabelClick, 
-			value: this.state.members, 
-			multi: true, 
-			placeholder: "イベキャラを選択してください", 
-			options: this.state.options, 
-			onChange: this.onChange}), 
+      value: this.state.members, 
+      multi: true, 
+      noResultsText: "イベキャラ選択が完了しました", 
+      placeholder: "イベキャラを選択してください", 
+      options: this.state.options, 
+      onChange: this.onChange}), 
     React.createElement("section", {className: "event-count"}, 
         React.createElement("span", {className: "pure-button before"}, 
-						"前イベ ", this.state.before_event_count
-				), 
+            "前イベ ", this.state.before_event_count
+        ), 
         React.createElement("span", {className: "pure-button after"}, 
-						"後イベ ", this.state.after_event_count
-				), 
-        React.createElement("span", {className: "about-event"}, 
-						"前イベ・後イベとは?"
+            "後イベ ", this.state.after_event_count
+        ), 
+				React.createElement("div", null, 
+						React.createElement("a", {href: "http://pawapurolabo.tumblr.com/post/115213099093"}, "前イベ・後イベとは?")
 				)
     ), 
-		this.state.members.map(function(member) {
-			var memberClass  = cx({
-				"member": true,
-				"pure-badge": true,
-				"male": member.type === 0 ,
+    this.state.members.map(function(member) {
+      var memberClass  = cx({
+        "member": true,
+        "pure-badge": true,
+        "male": member.type === 0 ,
         "female": member.type === 1,
         "girlfriend": member.type === 2,
-				"girlfriend-player": member.type === 3
-			});
-      var eventTdClass = cx({
-        "before": member.event_order === 0,
-        "after":  member.event_order === 1
+        "girlfriend-player": member.type === 3
       });
+
       var eventClass = cx({
-				"pure-badge": true,
+        "pure-badge": true,
         "before": member.event_order === 0,
         "after":  member.event_order === 1
       });
       var traningClass = cx({
- 				"pure-badge": member.traning,
-				"traning": true
+        "pure-badge": member.traning,
+        "traning": true
       });
       var skillClass = cx({
-				"pure-badge": member.skills.length > 0,
-				"skill": true
+        "pure-badge": member.skills.length > 0,
+        "skill": true
       });
       return React.createElement("div", {className: "pure-g result"}, 
-			React.createElement("div", {className: "pure-u-1-1"}, 
+      React.createElement("div", {className: "pure-u-1-1"}, 
       React.createElement("span", {className: memberClass}, member.label), 
       React.createElement("span", {className: eventClass}, 
-			  member.event_order === 0 ? "前イベ" : "後イベ"
-			), 
+        member.event_order === 0 ? "前イベ" : "後イベ"
+      ), 
       React.createElement("span", {className: traningClass}, 
-  			member.traning
-			), 
+        member.traning
+      ), 
       React.createElement("ul", null, 
       member.skills.map(function(skill) {
         return React.createElement("li", null, React.createElement("span", {className: skillClass}, skill));
@@ -101,37 +117,34 @@ var App = React.createClass({displayName: "App",
       })
       )
       )
-			)
-		 }, this), 
-			React.createElement("hr", null), 
-			React.createElement("section", {className: "pure-g hint"}, 
-				React.createElement("div", {className: "pure-u-1-1"}, 
-				  React.createElement("div", null, 
-						React.createElement("span", {className: "pure-badge male"}, "男性"), 
-						React.createElement("span", {className: "pure-badge female"}, "女性"), 
-						React.createElement("span", {className: "pure-badge girlfriend"}, "彼女"), 
-						React.createElement("span", {className: "pure-badge girlfriend-player"}, "選手兼彼女")
-					), 
-					React.createElement("div", null, 
-						React.createElement("span", {className: "pure-badge before"}, "前イベ"), 
-						React.createElement("span", {className: "pure-badge after"}, "後イベ"), 
-						React.createElement("span", {className: "pure-badge traning"}, "得意練習"), 
-						React.createElement("span", {className: "pure-badge skill"}, "練習コツ"), 
-						React.createElement("span", {className: "pure-badge special-skill"}, "金特・オリジナル変化球")
-					)
-  			)
-			)
-
-		)
-	}
+      )
+     }, this), 
+      React.createElement("hr", null), 
+      React.createElement("section", {className: "pure-g hint"}, 
+        React.createElement("div", {className: "pure-u-1-1"}, 
+          React.createElement("div", null, 
+            React.createElement("span", {className: "pure-badge male"}, "男性"), 
+            React.createElement("span", {className: "pure-badge female"}, "女性"), 
+            React.createElement("span", {className: "pure-badge girlfriend"}, "彼女"), 
+            React.createElement("span", {className: "pure-badge girlfriend-player"}, "選手兼彼女")
+          ), 
+          React.createElement("div", null, 
+            React.createElement("span", {className: "pure-badge before"}, "前イベ"), 
+            React.createElement("span", {className: "pure-badge after"}, "後イベ"), 
+            React.createElement("span", {className: "pure-badge traning"}, "得意練習"), 
+            React.createElement("span", {className: "pure-badge skill"}, "練習コツ"), 
+            React.createElement("span", {className: "pure-badge special-skill"}, "金特・オリジナル変化球")
+          )
+        )
+      )
+    )
+  }
 });
 
-
-		React.render(
-			React.createElement(App, null)
-			,
-			document.getElementById('app')
-		);
+React.render(
+  React.createElement(App, null),
+  document.getElementById('app')
+);
 
 
 },{"./data.jsx":181,"react-select":3,"react/addons":8}],2:[function(require,module,exports){
@@ -34489,7 +34502,7 @@ exports.Members =
     traning: '守備',
     skills: ['守備', 'アベレージヒッター', '広角打法', 'キャッチャー'],
     special_skills: ['球界の頭脳'],
-    event_order: 1,
+    event_order: 0,
     type: 0,
     match_bonus: false
   },
@@ -34505,7 +34518,7 @@ exports.Members =
   },
   {
     label: '大鐘餅太郎',
-    value: 'okanemochitaro',
+    value: 'ookanemochitaro',
     traning: '守備',
     skills: ['粘り打ち', 'ハイボールヒッター', '初級'],
     special_skills: ['左キラー'],
@@ -34540,7 +34553,7 @@ exports.Members =
     skills: ['バント', '送球', 'キャッチャー'],
     special_skills: ['ささやき戦術'],
     event_order: 1,
-    type: 0,
+    type: 1,
     match_bonus: false
   },
   {
@@ -34608,7 +34621,7 @@ exports.Members =
     label: '友沢亮',
     value: 'tomosawaryo',
     traning: '肩力',
-    skills: ['パワーヒッター', 'アベレージヒッター'],
+    skills: ['パワーヒッター', 'アベレージヒッター', '肩力'],
     special_skills: ['安打製造機'],
     event_order: 1,
     type: 0,
@@ -35043,10 +35056,50 @@ exports.Members =
     event_order: 0,
     type: 0,
     match_bonus: false
+  },
+  {
+    label: '沢村栄純',
+    value: 'sawamuraeijyun',
+    traning: 'スタミナ',
+    skills: ['リリース', '闘志', '球持ち', 'クロスファイアー', '対ピンチ'],
+    special_skills: ['変幻自在', '左キラー'],
+    event_order: 1,
+    type: 0,
+    match_bonus: false
+  },
+  {
+    label: '御幸一也',
+    value: 'miyukikazuya',
+    traning: '守備',
+    skills: ['肩力', 'キャッチャー'],
+    special_skills: ['球界の頭脳', '走者釘付け'],
+    event_order: 1,
+    type: 0,
+    match_bonus: false
+  },
+  {
+    label: '降谷暁',
+    value: 'furuyaakatuki',
+    traning: '球速',
+    skills: ['重い球', '奪三振'],
+    special_skills: ['怪童', '勝負師'],
+    event_order: 0,
+    type: 0,
+    match_bonus: false
+  },
+  {
+    label: '小湊春市',
+    value: 'kominatoharuichi',
+    traning: '打撃',
+    skills: ['チャンス', '固め打ち', 'アベレージヒッター'],
+    special_skills: ['安打製造機', '本塁打厳禁'],
+    event_order: 0,
+    type: 0,
+    match_bonus: false
   }
 ];
 
-exports.Combo =
+exports.Combos =
 [
   {
     name: 'あこがれの大西さん',
@@ -35306,7 +35359,7 @@ exports.Combo =
     {
       tachibanamizuki: true,
       rikudouhijiri: true,
-      rikudouhijiri: true,
+      tachikawahiromi: true,
       kodakamirei: true
     }
   },
@@ -35320,10 +35373,11 @@ exports.Combo =
       misonochika: true
     }
   }
+
 ];
 
 
 },{}]},{},[1])
 
 
-//# sourceMappingURL=src/js/app.js.map
+//# sourceMappingURL=app.js.map

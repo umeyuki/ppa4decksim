@@ -9,16 +9,26 @@ html
     meta property="og:locale" content="ja-JP"
     meta property="og:title" content="パワプロアプリデッキシミュレータ"
     meta property="og:description" content="アプリ版パワフルプロ野球のイベントデッキシミュレータです イベキャラを指定してコツ・オリジナル変化球・金特能力・前イベ後イベを判定します"
-    meta property="og:url" content="https://umeyuki.github.io/ppa4sim"
+    meta property="og:url" content="https://umeyuki.github.io/ppa4decksim"
     meta property="og:site_name" content="パワプロアプリデッキシミュレータ"
     meta property="og:type" content="article"
     link rel="stylesheet" href="assets/stylesheets/all.css"
+    script src="assets/javascripts/ga.js"
   body
     div.container
       h3.content-subhead パワプロアプリデッキシミュレータβ
       #app
       .footer
         | Copyright &copy; umeyuki 2015.
-        | Powerd by
-        a href="http://pawapurolabo.tumblr.com">パワプロアプリ研究所
-    script src="assets/javascripts/app.js"
+        br
+        | Powerd by　
+        a href="http://pawapurolabo.tumblr.com" パワプロアプリ研究所
+        span
+          script  src="//media.line.me/js/line-button.js?v=20140411"
+          javascript:
+            new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
+          a href="https://twitter.com/share" class="twitter-share-button" data-via="pawapurolabo" data-hashtags="ppa4decksim" Tweet
+          javascript:
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+        script src="assets/javascripts/app.js"

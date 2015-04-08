@@ -35,7 +35,7 @@ h2.content-subhead {
   font-size: 14px; }
 
 .event-count {
-  margin-top: 25px;
+  margin-top: 105px;
   margin-left: 8px; }
 .event-count span {
   color: #fff;
@@ -61,13 +61,13 @@ h2.content-subhead {
   display: inline-block; }
 
 span.traning {
-  background-color: #005FFF; }
+  background-color: #8b4513; }
 
 span.before {
-  background-color: #66FF33; }
+  background-color: #1cb841; }
 
 span.after {
-  background-color: #FF570D; }
+  background-color: #df7514; }
 
 span.special-skill {
   background-color: #e6b422; }
@@ -79,7 +79,7 @@ span.special-skill {
   width: 95px; }
 
 .male {
-  background-color: #77EEFF !important; }
+  background-color: #005FFF !important; }
 
 .female {
   background-color: #9933CC !important; }
