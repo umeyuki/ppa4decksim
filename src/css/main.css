@@ -34,8 +34,16 @@ h2.content-subhead {
   position: relative;
   font-size: 14px; }
 
+.combo {
+  margin-top: 85px;
+  margin-left: 8px; }
+.combo p {
+  display: inline-block;
+  margin-right: 8px;
+  font-weight: bold; }
+
 .event-count {
-  margin-top: 105px;
+  margin-top: 5px;
   margin-left: 8px; }
 .event-count span {
   color: #fff;

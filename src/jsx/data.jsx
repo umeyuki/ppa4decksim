@@ -670,7 +670,7 @@ exports.Combos =
     }
   },
   {
-    name: '兄弟の事情',
+	  name: '兄弟の事情',
     members:
     {
       ikarimamoru: true,

@@ -16,6 +16,8 @@ var App = React.createClass({displayName: "App",
     console.log(data);
   },
   onChange: function (value, members) {
+		this.setState({ combos: [] });
+		exists = {};
     if ( members.length < 6 ) {
       this.setState({ options: DATA['Members']});
     } else {
@@ -46,7 +48,11 @@ var App = React.createClass({displayName: "App",
 			}
 
 			if ( count === number_of_members ) {
-				this.setState({ combos: this.state.combos.concat([combo])} );
+				if (!(combo['name'] in exists)) {
+					this.setState({ combos: this.state.combos.concat([combo])} );
+					exists[combo['name']] = true;
+				}
+				console.log(exists);
 			}
     }
   },
@@ -54,15 +60,20 @@ var App = React.createClass({displayName: "App",
     var cx = React.addons.classSet;
     return React.createElement("section", null, 
     React.createElement("label", null, this.props.label), 
-		React.createElement("p", null, "kokodayo  ", this.state.combos), 
     React.createElement(Select, {
       onOptionLabelClick: this.onLabelClick, 
       value: this.state.members, 
       multi: true, 
-      noResultsText: "イベキャラ選択が完了しました", 
+      noResultsText: "", 
       placeholder: "イベキャラを選択してください", 
       options: this.state.options, 
       onChange: this.onChange}), 
+    React.createElement("section", {className: "combo"}, 
+       this.state.combos.length  ? React.createElement("h3", null, "コンボ") : '', 
+      this.state.combos.map(function(combo) {
+        return React.createElement("p", {className: "pure-alert pure-alert-success"}, combo.name);
+      })
+		), 
     React.createElement("section", {className: "event-count"}, 
         React.createElement("span", {className: "pure-button before"}, 
             "前イベ ", this.state.before_event_count
@@ -35134,7 +35145,7 @@ exports.Combos =
     }
   },
   {
-    name: '兄弟の事情',
+	  name: '兄弟の事情',
     members:
     {
       ikarimamoru: true,

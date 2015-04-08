@@ -15,6 +15,8 @@ var App = React.createClass({
     console.log(data);
   },
   onChange: function (value, members) {
+		this.setState({ combos: [] });
+		exists = {};
     if ( members.length < 6 ) {
       this.setState({ options: DATA['Members']});
     } else {
@@ -45,7 +47,11 @@ var App = React.createClass({
 			}
 
 			if ( count === number_of_members ) {
-				this.setState({ combos: this.state.combos.concat([combo])} );
+				if (!(combo['name'] in exists)) {
+					this.setState({ combos: this.state.combos.concat([combo])} );
+					exists[combo['name']] = true;
+				}
+				console.log(exists);
 			}
     }
   },
@@ -53,15 +59,20 @@ var App = React.createClass({
     var cx = React.addons.classSet;
     return <section>
     <label>{this.props.label}</label>
-		<p>kokodayo  {this.state.combos}</p>
     <Select
       onOptionLabelClick={this.onLabelClick}
       value={this.state.members}
       multi={true}
-      noResultsText="イベキャラ選択が完了しました"
+      noResultsText=""
       placeholder="イベキャラを選択してください"
       options={this.state.options}
       onChange={this.onChange} />
+    <section className="combo">
+      { this.state.combos.length  ? <h3>コンボ</h3> : '' }
+      {this.state.combos.map(function(combo) {
+        return <p className="pure-alert pure-alert-success" >{combo.name}</p>;
+      })}
+		</section>
     <section className="event-count">
         <span className="pure-button before">
             前イベ {this.state.before_event_count}
