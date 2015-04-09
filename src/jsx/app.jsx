@@ -94,7 +94,7 @@ var App = React.createClass({
         </span>
     </section>
     <section className="event-character">
-    { this.state.members.length > 0  ? <h3 className="headline">イベキャラ</h3> : '' }
+    { this.state.members.length > 0  ? <h3 className="headline">イベントデッキ</h3> : '' }
     {this.state.members.map(function(member) {
       var memberClass  = cx({
         "member": true,
