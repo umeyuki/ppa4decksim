@@ -10,14 +10,15 @@ var App = React.createClass({displayName: "App",
       combos: [],
       before_event_count: 0,
       after_event_count:  0,
+      match_bonus: 0
     };
   },
   onLabelClick: function (data, event) {
     console.log(data);
   },
   onChange: function (value, members) {
-		this.setState({ combos: [] });
-		exists = {};
+    exists = {};
+
     if ( members.length < 6 ) {
       this.setState({ options: DATA['Members']});
     } else {
@@ -26,35 +27,38 @@ var App = React.createClass({displayName: "App",
     this.setState({ members: members } );
     before=0;
     after=0;
+    match_bonus = 0;
+    member_values = [];
     for (var i=0; i < members.length; i++) {
+      member_values.push(members[i]['value']);
       if ( members[i].event_order == 0 ) {
         before++;
       } else {
         after++;
       }
+      if ( members[i].match_bonus ) {
+        match_bonus = match_bonus + 10;
+      }
     }
     this.setState( { before_event_count: before } );
     this.setState( { after_event_count: after  } );
+    this.setState( { match_bonus: match_bonus } );
+    combos = [];
     for (var i=0; i < DATA['Combos'].length; i++) {
-			combo = DATA['Combos'][i];
-			number_of_members = Object.keys(combo['members']).length;
-			count = 0;
-			for ( var m in combo.members) {
-				for (var j=0; j < members.length; j++ ) {
-					if ( m === members[j]['value']) {
-						count++;
-					}
-				}
-			}
-
-			if ( count === number_of_members ) {
-				if (!(combo['name'] in exists)) {
-					this.setState({ combos: this.state.combos.concat([combo])} );
-					exists[combo['name']] = true;
-				}
-				console.log(exists);
-			}
+      combo = DATA['Combos'][i];
+      combo_members = Object.keys(combo['members']);
+      compare = [];
+      for (var j=0; j < combo_members.length; j++) {
+        index =  member_values.indexOf(combo_members[j])
+        if ( index != -1 ) {
+          compare.push(member_values[index]);
+        }
+      }
+      if ( combo_members.toString() == compare.toString() ) {
+        combos.push(combo);
+      }
     }
+    this.setState({ combos: combos } );
   },
   render: function() {
     var cx = React.addons.classSet;
@@ -69,22 +73,27 @@ var App = React.createClass({displayName: "App",
       options: this.state.options, 
       onChange: this.onChange}), 
     React.createElement("section", {className: "combo"}, 
-       this.state.combos.length  ? React.createElement("h3", null, "コンボ") : '', 
+       this.state.combos.length > 0 ? React.createElement("h3", {className: "headline"}, "コンボ発生") : '', 
       this.state.combos.map(function(combo) {
-        return React.createElement("p", {className: "pure-alert pure-alert-success"}, combo.name);
+        return React.createElement("p", {className: "pure-alert pure-alert-error"}, combo.name);
       })
-		), 
-    React.createElement("section", {className: "event-count"}, 
+    ), 
+    React.createElement("section", {className: "option"}, 
         React.createElement("span", {className: "pure-button before"}, 
             "前イベ ", this.state.before_event_count
         ), 
         React.createElement("span", {className: "pure-button after"}, 
             "後イベ ", this.state.after_event_count
         ), 
-				React.createElement("div", null, 
-						React.createElement("a", {href: "http://pawapurolabo.tumblr.com/post/115213099093"}, "前イベ・後イベとは?")
-				)
+        React.createElement("span", {className: "pure-button before"}, 
+            "試合経験点ボーナス ",  this.state.match_bonus, " %"
+        ), 
+        React.createElement("div", null, 
+            React.createElement("a", {href: "http://pawapurolabo.tumblr.com/post/115213099093"}, "前イベ・後イベとは?")
+        )
     ), 
+    React.createElement("section", {className: "event-character"}, 
+     this.state.members.length > 0  ? React.createElement("h3", {className: "headline"}, "イベキャラ") : '', 
     this.state.members.map(function(member) {
       var memberClass  = cx({
         "member": true,
@@ -129,25 +138,26 @@ var App = React.createClass({displayName: "App",
       )
       )
       )
-     }, this), 
-      React.createElement("hr", null), 
-      React.createElement("section", {className: "pure-g hint"}, 
+     }, this)
+    ), 
+    React.createElement("hr", null), 
+    React.createElement("section", {className: "pure-g hint"}, 
         React.createElement("div", {className: "pure-u-1-1"}, 
-          React.createElement("div", null, 
-            React.createElement("span", {className: "pure-badge male"}, "男性"), 
-            React.createElement("span", {className: "pure-badge female"}, "女性"), 
-            React.createElement("span", {className: "pure-badge girlfriend"}, "彼女"), 
-            React.createElement("span", {className: "pure-badge girlfriend-player"}, "選手兼彼女")
-          ), 
-          React.createElement("div", null, 
-            React.createElement("span", {className: "pure-badge before"}, "前イベ"), 
-            React.createElement("span", {className: "pure-badge after"}, "後イベ"), 
-            React.createElement("span", {className: "pure-badge traning"}, "得意練習"), 
-            React.createElement("span", {className: "pure-badge skill"}, "練習コツ"), 
-            React.createElement("span", {className: "pure-badge special-skill"}, "金特・オリジナル変化球")
-          )
+            React.createElement("div", null, 
+                React.createElement("span", {className: "pure-badge male"}, "男性"), 
+                React.createElement("span", {className: "pure-badge female"}, "女性"), 
+                React.createElement("span", {className: "pure-badge girlfriend"}, "彼女"), 
+                React.createElement("span", {className: "pure-badge girlfriend-player"}, "選手兼彼女")
+            ), 
+            React.createElement("div", null, 
+                React.createElement("span", {className: "pure-badge before"}, "前イベ"), 
+                React.createElement("span", {className: "pure-badge after"}, "後イベ"), 
+                React.createElement("span", {className: "pure-badge traning"}, "得意練習"), 
+                React.createElement("span", {className: "pure-badge skill"}, "練習コツ"), 
+                React.createElement("span", {className: "pure-badge special-skill"}, "金特・オリジナル変化球")
+            )
         )
-      )
+    )
     )
   }
 });
@@ -35342,7 +35352,7 @@ exports.Combos =
     members:
     {
       ikarimamoru: true,
-      okanemochitaro: true,
+      ookanemochitaro: true,
       tachibanamizuki: true
     }
   },

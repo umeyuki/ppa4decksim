@@ -867,7 +867,7 @@ exports.Combos =
     members:
     {
       ikarimamoru: true,
-      okanemochitaro: true,
+      ookanemochitaro: true,
       tachibanamizuki: true
     }
   },
