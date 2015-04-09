@@ -62,6 +62,7 @@ h2.content-subhead {
   font-weight: bold;
   margin-right: 5px; }
 .option span.about-event {
+  display: inline-block;
   margin-left: 15px; }
 
 .event-character {
@@ -69,7 +70,7 @@ h2.content-subhead {
   margin-top: 5px; }
 
 .result {
-  margin-bottom: 10px; }
+  margin-bottom: 20px; }
 .result .event-order {
   text-align: center;
   width: 175px; }

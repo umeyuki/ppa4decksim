@@ -84,12 +84,14 @@ var App = React.createClass({
         <span className="pure-button after">
             後イベ {this.state.after_event_count}
         </span>
-        <span className="pure-button before">
-            試合経験点ボーナス { this.state.match_bonus } %
-        </span>
         <div>
             <a href="http://pawapurolabo.tumblr.com/post/115213099093">前イベ・後イベとは?</a>
         </div>
+    </section>
+    <section className="option">
+        <span className="pure-button before">
+            試合経験点ボーナス { this.state.match_bonus } %
+        </span>
     </section>
     <section className="event-character">
     { this.state.members.length > 0  ? <h3 className="headline">イベキャラ</h3> : '' }
@@ -116,7 +118,7 @@ var App = React.createClass({
         "pure-badge": member.skills.length > 0,
         "skill": true
       });
-      return <div className="pure-g result">
+      return <div className="pure-g evechar">
       <div className="pure-u-1-1">
       <span className={memberClass}>{member.label}</span>
       <span className={eventClass}>

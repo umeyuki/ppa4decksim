@@ -85,11 +85,13 @@ var App = React.createClass({displayName: "App",
         React.createElement("span", {className: "pure-button after"}, 
             "後イベ ", this.state.after_event_count
         ), 
-        React.createElement("span", {className: "pure-button before"}, 
-            "試合経験点ボーナス ",  this.state.match_bonus, " %"
-        ), 
         React.createElement("div", null, 
             React.createElement("a", {href: "http://pawapurolabo.tumblr.com/post/115213099093"}, "前イベ・後イベとは?")
+        )
+    ), 
+    React.createElement("section", {className: "option"}, 
+        React.createElement("span", {className: "pure-button before"}, 
+            "試合経験点ボーナス ",  this.state.match_bonus, " %"
         )
     ), 
     React.createElement("section", {className: "event-character"}, 
@@ -117,7 +119,7 @@ var App = React.createClass({displayName: "App",
         "pure-badge": member.skills.length > 0,
         "skill": true
       });
-      return React.createElement("div", {className: "pure-g result"}, 
+      return React.createElement("div", {className: "pure-g evechar"}, 
       React.createElement("div", {className: "pure-u-1-1"}, 
       React.createElement("span", {className: memberClass}, member.label), 
       React.createElement("span", {className: eventClass}, 
