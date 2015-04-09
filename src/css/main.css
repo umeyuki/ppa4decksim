@@ -1,18 +1,21 @@
 @media screen and (min-width: 979px) {
-  .container {
+  .wrapper {
     width: 750px;
     margin-left: auto;
     margin-right: auto; } }
 @media screen and (max-width: 767px) {
-  .container {
+  .wrapper {
     width: 750px;
     margin-left: auto;
     margin-right: auto; } }
 @media screen and (max-width: 479px) {
-  .container {
+  .wrapper {
     width: 100%;
     margin-left: auto;
     margin-right: auto; } }
+.container {
+  margin-left: 8px; }
+
 h3.headline {
   color: #4b4b4b;
   margin: 10px 0 5px 0;

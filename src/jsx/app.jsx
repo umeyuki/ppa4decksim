@@ -61,7 +61,7 @@ var App = React.createClass({
   },
   render: function() {
     var cx = React.addons.classSet;
-    return <section>
+    return <section className="container">
     <label>{this.props.label}</label>
     <Select
       onOptionLabelClick={this.onLabelClick}
@@ -118,7 +118,7 @@ var App = React.createClass({
         "pure-badge": member.skills.length > 0,
         "skill": true
       });
-      return <div className="pure-g evechar">
+      return <div className="pure-g result">
       <div className="pure-u-1-1">
       <span className={memberClass}>{member.label}</span>
       <span className={eventClass}>

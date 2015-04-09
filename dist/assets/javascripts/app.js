@@ -62,7 +62,7 @@ var App = React.createClass({displayName: "App",
   },
   render: function() {
     var cx = React.addons.classSet;
-    return React.createElement("section", null, 
+    return React.createElement("section", {className: "container"}, 
     React.createElement("label", null, this.props.label), 
     React.createElement(Select, {
       onOptionLabelClick: this.onLabelClick, 
@@ -119,7 +119,7 @@ var App = React.createClass({displayName: "App",
         "pure-badge": member.skills.length > 0,
         "skill": true
       });
-      return React.createElement("div", {className: "pure-g evechar"}, 
+      return React.createElement("div", {className: "pure-g result"}, 
       React.createElement("div", {className: "pure-u-1-1"}, 
       React.createElement("span", {className: memberClass}, member.label), 
       React.createElement("span", {className: eventClass}, 
