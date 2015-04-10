@@ -245,7 +245,7 @@ exports.Members =
   },
   {
     label: 'ブロンコ=リー',
-    value: 'bronco=lie',
+    value: 'buronco=lie',
     traning: '精神',
     skills: ['チャンス', 'ケガしにくさ', '流し打ち', '粘り打ち', '意外性'],
     special_skills: ['アーチスト'],
