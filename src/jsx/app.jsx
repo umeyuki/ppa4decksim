@@ -1,6 +1,20 @@
 var React = require('react/addons'),
     Select = require('react-select');
 var DATA = require('./data.jsx');
+
+var EventCharacter = React.createClass({
+  propTypes: {
+    label:   React.PropTypes.string.isRequreid,
+    value:   React.PropTypes.string.isRequreid,
+    traning: React.oneOfType([React.PropTypes.string, React.PropTypes.bool]).isRequreid,
+    skills:  React.PropTypes.array,
+    special_skills: React.PropTypes.array.isRequreid,
+    event_order: React.PropTypes.number.isRequreid,
+    type: React.PropTypes.number.isRequreid,
+    match_bouns: React.PropTypes.number.isRequreid
+  },
+});
+
 var App = React.createClass({
   getInitialState: function() {
     return {
