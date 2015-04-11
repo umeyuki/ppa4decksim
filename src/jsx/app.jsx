@@ -1,19 +1,7 @@
-var React = require('react/addons'),
+var React = require('react'),
     Select = require('react-select');
 var DATA = require('./data.jsx');
-
-var EventCharacter = React.createClass({
-  propTypes: {
-    label:   React.PropTypes.string.isRequreid,
-    value:   React.PropTypes.string.isRequreid,
-    traning: React.oneOfType([React.PropTypes.string, React.PropTypes.bool]).isRequreid,
-    skills:  React.PropTypes.array,
-    special_skills: React.PropTypes.array.isRequreid,
-    event_order: React.PropTypes.number.isRequreid,
-    type: React.PropTypes.number.isRequreid,
-    match_bouns: React.PropTypes.number.isRequreid
-  },
-});
+var ClassNames = require('classnames');
 
 var App = React.createClass({
   getInitialState: function() {
@@ -74,7 +62,6 @@ var App = React.createClass({
     this.setState({ combos: combos } );
   },
   render: function() {
-    var cx = React.addons.classSet;
     return <section className="container">
     <label>{this.props.label}</label>
     <Select
@@ -110,27 +97,30 @@ var App = React.createClass({
     <section className="event-character">
     { this.state.members.length > 0  ? <h3 className="headline">イベントデッキ</h3> : '' }
     {this.state.members.map(function(member) {
-      var memberClass  = cx({
-        "member": true,
-        "pure-badge": true,
-        "male": member.type === 0 ,
-        "female": member.type === 1,
-        "girlfriend": member.type === 2,
-        "girlfriend-player": member.type === 3
-      });
-
-      var eventClass = cx({
-        "pure-badge": true,
-        "before": member.event_order === 0,
-        "after":  member.event_order === 1
-      });
-      var traningClass = cx({
-        "pure-badge": member.traning,
-        "traning": true
-      });
-      var skillClass = cx({
+      var memberClass = ClassNames(
+        'memberClass', 'pure-badge',
+        {
+          "male": member.type === 0 ,
+          "female": member.type === 1,
+          "girlfriend": member.type === 2,
+          "girlfriend-player": member.type === 3
+        }
+      );
+      var eventClass = ClassNames(
+        'pure-badge',
+        {
+          "before": member.event_order === 0,
+          "after":  member.event_order === 1
+        }
+      );
+      var traningClass = ClassNames(
+        "traning",
+        {
+          "pure-badge": member.traning,
+        }
+      );
+      var skillClass = ClassNames("skill" ,{
         "pure-badge": member.skills.length > 0,
-        "skill": true
       });
       return <div className="pure-g result">
       <div className="pure-u-1-1">
