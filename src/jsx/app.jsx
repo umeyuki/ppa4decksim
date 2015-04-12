@@ -3,6 +3,7 @@ var React = require('react'),
 var DATA = require('./data.jsx');
 var ClassNames = require('classnames');
 
+
 var App = React.createClass({
   getInitialState: function() {
     return {
@@ -90,7 +91,7 @@ var App = React.createClass({
         </div>
     </section>
     <section className="option">
-        <span className="pure-button before">
+        <span className="pure-button match-bonus">
             試合経験点ボーナス { this.state.match_bonus } %
         </span>
     </section>
@@ -119,6 +120,13 @@ var App = React.createClass({
           "pure-badge": member.traning,
         }
       );
+      var matchBonusClass = ClassNames(
+        "match-bonus",
+        {
+          "pure-badge": member.match_bonus,
+        }
+      );
+
       var skillClass = ClassNames("skill" ,{
         "pure-badge": member.skills.length > 0,
       });
@@ -127,6 +135,9 @@ var App = React.createClass({
       <span className={memberClass}>{member.label}</span>
       <span className={eventClass}>
         {member.event_order === 0 ? "前イベ" : "後イベ"}
+      </span>
+      <span className={matchBonusClass}>
+        {member.match_bonus ? '試合経験点10%' : ''}
       </span>
       <span className={traningClass}>
         {member.traning}

@@ -4,6 +4,7 @@ var React = require('react'),
 var DATA = require('./data.jsx');
 var ClassNames = require('classnames');
 
+
 var App = React.createClass({displayName: "App",
   getInitialState: function() {
     return {
@@ -91,7 +92,7 @@ var App = React.createClass({displayName: "App",
         )
     ), 
     React.createElement("section", {className: "option"}, 
-        React.createElement("span", {className: "pure-button before"}, 
+        React.createElement("span", {className: "pure-button match-bonus"}, 
             "試合経験点ボーナス ",  this.state.match_bonus, " %"
         )
     ), 
@@ -120,6 +121,13 @@ var App = React.createClass({displayName: "App",
           "pure-badge": member.traning,
         }
       );
+      var matchBonusClass = ClassNames(
+        "match-bonus",
+        {
+          "pure-badge": member.match_bonus,
+        }
+      );
+
       var skillClass = ClassNames("skill" ,{
         "pure-badge": member.skills.length > 0,
       });
@@ -128,6 +136,9 @@ var App = React.createClass({displayName: "App",
       React.createElement("span", {className: memberClass}, member.label), 
       React.createElement("span", {className: eventClass}, 
         member.event_order === 0 ? "前イベ" : "後イベ"
+      ), 
+      React.createElement("span", {className: matchBonusClass}, 
+        member.match_bonus ? '試合経験点10%' : ''
       ), 
       React.createElement("span", {className: traningClass}, 
         member.traning
@@ -33053,7 +33064,7 @@ exports.Members =
   },
   {
     label: '降谷暁',
-    value: 'furuyaakatuki',
+    value: 'furuyasatoru',
     traning: '球速',
     skills: ['重い球', '奪三振'],
     special_skills: ['怪童', '勝負師'],

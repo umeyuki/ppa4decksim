@@ -614,7 +614,7 @@ exports.Members =
   },
   {
     label: '降谷暁',
-    value: 'furuyaakatuki',
+    value: 'furuyasatoru',
     traning: '球速',
     skills: ['重い球', '奪三振'],
     special_skills: ['怪童', '勝負師'],
