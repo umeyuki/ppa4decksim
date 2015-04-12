@@ -4,6 +4,50 @@ var React = require('react'),
 var DATA = require('./data.jsx');
 var ClassNames = require('classnames');
 
+var Filter = React.createClass({displayName: "Filter",
+  propTypes: {
+    searchable: true,
+    matchBonus:    React.PropTypes.bool,
+    boy:           React.PropTypes.bool,
+    girl:          React.PropTypes.bool,
+    girlFriend:    React.PropTypes.bool,
+    beforeEvent:   React.PropTypes.bool,
+    afterEvent:    React.PropTypes.bool,
+    skills:        React.PropTypes.string,
+    specialSkills: React.PropTypes.string,
+    traning:       React.PropTypes.string,
+    options:       React.PropTypes.array.isRequired
+  },
+  render: function() {
+    return React.createElement("div", {id: "filter"}, 
+    React.createElement("h3", null, "絞り込む"), 
+    React.createElement("ul", null, 
+    React.createElement("li", null, 
+        React.createElement("input", {type: "checkbox"}), "男性", 
+        React.createElement("input", {type: "checkbox"}), "女性", 
+        React.createElement("input", {type: "checkbox"}), "彼女"
+    ), 
+    React.createElement("li", null, 
+        React.createElement("input", {type: "checkbox"}), "前イベ", 
+        React.createElement("input", {type: "checkbox"}), "後イベ"
+    ), 
+    React.createElement("li", null, 
+        "特殊能力", 
+        React.createElement(Select, {options: this.props.options, value: "one", searchable: this.props.searchable})
+    ), 
+    React.createElement("li", null, 
+        "金特 オリジナル変化球", 
+        React.createElement(Select, {options: this.props.options, value: "one", searchable: this.props.searchable})
+    ), 
+    React.createElement("li", null, 
+        "得意練習", 
+        React.createElement(Select, {options: this.props.options, value: "one", searchable: this.props.searchable})
+    )
+    )
+    )
+  }
+
+});
 
 var App = React.createClass({displayName: "App",
   getInitialState: function() {
@@ -65,6 +109,7 @@ var App = React.createClass({displayName: "App",
   },
   render: function() {
     return React.createElement("section", {className: "container"}, 
+    React.createElement(Filter, null), 
     React.createElement("label", null, this.props.label), 
     React.createElement(Select, {
       onOptionLabelClick: this.onLabelClick, 

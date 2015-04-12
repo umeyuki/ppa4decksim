@@ -28,6 +28,12 @@ body {
   margin: 0;
   padding: 0; }
 
+ul {
+  padding-left: 0px; }
+ul li {
+  margin-right: 5px;
+  list-style: none; }
+
 span {
   overflow: hidden;
   white-space: nowrap;
@@ -232,6 +238,9 @@ label {
   outline: none;
   padding: 8px 52px 8px 10px;
   transition: all 200ms ease; }
+
+#filter .Select-control {
+  width: 240px; }
 
 .Select-control:hover {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06); }
