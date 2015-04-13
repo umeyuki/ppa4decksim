@@ -5,31 +5,34 @@ var DATA = require('./data.jsx');
 var ClassNames = require('classnames');
 
 var Filter = React.createClass({displayName: "Filter",
-  propTypes: {
-    searchable: true,
-    matchBonus:    React.PropTypes.bool,
-    boy:           React.PropTypes.bool,
-    girl:          React.PropTypes.bool,
-    girlFriend:    React.PropTypes.bool,
-    beforeEvent:   React.PropTypes.bool,
-    afterEvent:    React.PropTypes.bool,
-    skills:        React.PropTypes.string,
-    specialSkills: React.PropTypes.string,
-    traning:       React.PropTypes.string,
-    options:       React.PropTypes.array.isRequired
+  propTypes:  {
+    searchable: true
+  },
+  getInitialState: function() {
+    return {
+      boy:           true,
+      girl:          true,
+      girlFriend:    true,
+      beforeEvent:   true,
+      afterEvent:    true,
+
+      }
+  },
+  onChange: function() {
+
   },
   render: function() {
     return React.createElement("div", {id: "filter"}, 
     React.createElement("h3", null, "絞り込む"), 
     React.createElement("ul", null, 
     React.createElement("li", null, 
-        React.createElement("input", {type: "checkbox"}), "男性", 
-        React.createElement("input", {type: "checkbox"}), "女性", 
-        React.createElement("input", {type: "checkbox"}), "彼女"
+        React.createElement("input", {className: "pure-checkbox", type: "checkbox", value: this.state.onChange}), "男性", 
+        React.createElement("input", {className: "pure-checkbox", type: "checkbox", value: this.state.onChange}), "女性", 
+        React.createElement("input", {className: "pure-checkbox", type: "checkbox", value: this.state.onChange}), "彼女"
     ), 
     React.createElement("li", null, 
-        React.createElement("input", {type: "checkbox"}), "前イベ", 
-        React.createElement("input", {type: "checkbox"}), "後イベ"
+        React.createElement("input", {className: "pure-checkbox", type: "checkbox"}), "前イベ", 
+        React.createElement("input", {className: "pure-checkbox", type: "checkbox"}), "後イベ"
     ), 
     React.createElement("li", null, 
         "特殊能力", 

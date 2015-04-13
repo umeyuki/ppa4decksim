@@ -4,31 +4,34 @@ var DATA = require('./data.jsx');
 var ClassNames = require('classnames');
 
 var Filter = React.createClass({
-  propTypes: {
-    searchable: true,
-    matchBonus:    React.PropTypes.bool,
-    boy:           React.PropTypes.bool,
-    girl:          React.PropTypes.bool,
-    girlFriend:    React.PropTypes.bool,
-    beforeEvent:   React.PropTypes.bool,
-    afterEvent:    React.PropTypes.bool,
-    skills:        React.PropTypes.string,
-    specialSkills: React.PropTypes.string,
-    traning:       React.PropTypes.string,
-    options:       React.PropTypes.array.isRequired
+  propTypes:  {
+    searchable: true
+  },
+  getInitialState: function() {
+    return {
+      boy:           true,
+      girl:          true,
+      girlFriend:    true,
+      beforeEvent:   true,
+      afterEvent:    true,
+
+      }
+  },
+  onChange: function() {
+
   },
   render: function() {
     return <div id="filter">
     <h3>絞り込む</h3>
     <ul>
     <li>
-        <input type="checkbox"/>男性
-        <input type="checkbox"/>女性
-        <input type="checkbox"/>彼女
+        <input className="pure-checkbox" type="checkbox" value={this.state.onChange} />男性
+        <input className="pure-checkbox" type="checkbox" value={this.state.onChange}/>女性
+        <input className="pure-checkbox" type="checkbox" value={this.state.onChange}/>彼女
     </li>
     <li>
-        <input type="checkbox"/>前イベ
-        <input type="checkbox"/>後イベ
+        <input className="pure-checkbox" type="checkbox"/>前イベ
+        <input className="pure-checkbox" type="checkbox"/>後イベ
     </li>
     <li>
         特殊能力
