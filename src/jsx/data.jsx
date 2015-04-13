@@ -7,7 +7,6 @@ exports.Members =
     skills: ['フォーク', '対ピンチ', '打球反応'],
     special_skills: ['怪物球威'],
     event_order: 1,
-    girl_friend: false,
     type: 1,
     match_bonus: false
   },
@@ -615,7 +614,7 @@ exports.Members =
   },
   {
     label: '降谷暁',
-    value: 'furuyaakatuki',
+    value: 'furuyasatoru',
     traning: '球速',
     skills: ['重い球', '奪三振'],
     special_skills: ['怪童', '勝負師'],

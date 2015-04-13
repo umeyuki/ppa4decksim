@@ -27,5 +27,8 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^2.4.0"
+  },
+  "dependencies": {
+    "classnames": "^1.2.0"
   }
 }

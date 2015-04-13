@@ -42,6 +42,12 @@ body {
   padding: 0;
 }
 
+ul  {
+  padding-left: 0px;
+  li {
+    list-style: none;
+  }
+}
 span {
   overflow: hidden;
   white-space: nowrap;
@@ -120,6 +126,10 @@ span.traning {
 }
 span.before {
   background-color: #1cb841;
+}
+
+span.match-bonus {
+  background-color: #b56767;
 }
 span.after {
   background-color: #df7514;
@@ -252,6 +262,7 @@ label {
 .Select {
   position: relative;
 }
+
 .Select-control {
   position: relative;
   overflow: hidden;
@@ -266,6 +277,12 @@ label {
   padding: 8px 52px 8px 10px;
   transition: all 200ms ease;
 }
+
+#filter .Select-control {
+  width: 240px;
+}
+
+
 .Select-control:hover {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
 }
