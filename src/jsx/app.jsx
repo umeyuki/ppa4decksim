@@ -64,7 +64,7 @@ var App = React.createClass({
   render: function() {
     return <section className="container">
     <label>{this.props.label}</label>
-    <span>{window.parent.screen.width <= 480 ? "イベキャラ選択から抜けるにはspaceキーを押してください" : ""}</span>
+    <span>{window.parent.screen.width <= 480 ? "spaceキーで選択を中断できます" : ""}</span>
     <Select
       onOptionLabelClick={this.onLabelClick}
       value={this.state.members}

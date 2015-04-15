@@ -65,7 +65,7 @@ var App = React.createClass({displayName: "App",
   render: function() {
     return React.createElement("section", {className: "container"}, 
     React.createElement("label", null, this.props.label), 
-    React.createElement("span", null, window.parent.screen.width <= 480 ? "イベキャラ選択から抜けるにはspaceキーを押してください" : ""), 
+    React.createElement("span", null, window.parent.screen.width <= 480 ? "spaceキーで選択を中断できます" : ""), 
     React.createElement(Select, {
       onOptionLabelClick: this.onLabelClick, 
       value: this.state.members, 
