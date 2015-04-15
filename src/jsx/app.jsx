@@ -36,6 +36,7 @@ var App = React.createClass({
     var cx = React.addons.classSet;
     return <section>
     <label>{this.props.label}</label>
+    {window.parent.screen.width <= 480 ? "イベキャラ選択から抜けるにはspaceキーを押してください" : ""}
     <Select
       onOptionLabelClick={this.onLabelClick}
       value={this.state.members}

@@ -37,6 +37,7 @@ var App = React.createClass({displayName: "App",
     var cx = React.addons.classSet;
     return React.createElement("section", null, 
     React.createElement("label", null, this.props.label), 
+    window.parent.screen.width <= 480 ? "イベキャラ選択から抜けるにはspaceキーを押してください" : "", 
     React.createElement(Select, {
       onOptionLabelClick: this.onLabelClick, 
       value: this.state.members, 
