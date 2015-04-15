@@ -4,7 +4,6 @@ var React = require('react'),
 var DATA = require('./data.jsx');
 var ClassNames = require('classnames');
 
-
 var App = React.createClass({displayName: "App",
   getInitialState: function() {
     return {
@@ -66,6 +65,7 @@ var App = React.createClass({displayName: "App",
   render: function() {
     return React.createElement("section", {className: "container"}, 
     React.createElement("label", null, this.props.label), 
+    window.parent.screen.width <= 480 ? "イベキャラ選択から抜けるにはspaceキーを押してください" : "", 
     React.createElement(Select, {
       onOptionLabelClick: this.onLabelClick, 
       value: this.state.members, 
