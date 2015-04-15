@@ -4,231 +4,308 @@ var React = require('react'),
 var DATA = require('./data.jsx');
 var ClassNames = require('classnames');
 
-var Filter = React.createClass({displayName: "Filter",
-  propTypes:  {
-    searchable: true
+var Character = React.createClass({displayName: "Character",
+  propTypes: {
+    character: React.PropTypes.shape({
+//      id: React.PropTypes.number.isRequired,
+      label: React.PropTypes.string.isRequired,
+      value: React.PropTypes.string.isRequired,
+      traning: React.PropTypes.string,
+      skills: React.PropTypes.array,
+      specialSkills: React.PropTypes.array,
+      type: React.PropTypes.number.isRequired,
+      matchBonus: React.PropTypes.array
+    }),
+    index:  React.PropTypes.number.isRequired,
+    options: React.PropTypes.array.isRequired,
+    placeholder: React.PropTypes.string.isRequired,
+    searchable: React.PropTypes.bool.isRequired,
+    onChange: React.PropTypes.func.isRequired
   },
-  getInitialState: function() {
+  getDefaultProps: function() {
     return {
-      boy:           true,
-      girl:          true,
-      girlFriend:    true,
-      beforeEvent:   true,
-      afterEvent:    true,
-
-      }
+      searchable: true
+    }
   },
-  onChange: function() {
-
+  onChange: function(value, values) {
+    this.props.onChange(this.props.index, values);
   },
   render: function() {
-    return React.createElement("div", {id: "filter"}, 
-    React.createElement("h3", null, "絞り込む"), 
-    React.createElement("ul", null, 
-    React.createElement("li", null, 
-        React.createElement("input", {className: "pure-checkbox", type: "checkbox", value: this.state.onChange}), "男性", 
-        React.createElement("input", {className: "pure-checkbox", type: "checkbox", value: this.state.onChange}), "女性", 
-        React.createElement("input", {className: "pure-checkbox", type: "checkbox", value: this.state.onChange}), "彼女"
-    ), 
-    React.createElement("li", null, 
-        React.createElement("input", {className: "pure-checkbox", type: "checkbox"}), "前イベ", 
-        React.createElement("input", {className: "pure-checkbox", type: "checkbox"}), "後イベ"
-    ), 
-    React.createElement("li", null, 
-        "特殊能力", 
-        React.createElement(Select, {options: this.props.options, value: "one", searchable: this.props.searchable})
-    ), 
-    React.createElement("li", null, 
-        "金特 オリジナル変化球", 
-        React.createElement(Select, {options: this.props.options, value: "one", searchable: this.props.searchable})
-    ), 
-    React.createElement("li", null, 
-        "得意練習", 
-        React.createElement(Select, {options: this.props.options, value: "one", searchable: this.props.searchable})
+    return React.createElement("div", null, 
+    React.createElement(Select, {
+       options: this.props.options, 
+       searchable: this.props.searchable, 
+       placeholder: this.props.placeholder, 
+       onChange: this.onChange}
     )
-    )
+
     )
   }
-
 });
 
-var App = React.createClass({displayName: "App",
+var Characters = React.createClass({displayName: "Characters",
+  propTypes: {
+    defaultCharacters: React.PropTypes.array.isRequired
+  },
+  getDefaultProps: function() {
+    return {
+      defaultCharacters: DATA['Members']
+    }
+  },
   getInitialState: function() {
     return {
-      options: DATA['Members'],
-      members: [],
-      combos: [],
-      before_event_count: 0,
-      after_event_count:  0,
-      match_bonus: 0
+      characters: [],
     };
   },
-  onLabelClick: function (data, event) {
-    console.log(data);
-  },
-  onChange: function (value, members) {
-    exists = {};
+  changeCharacter: function(index, values) {
+    hash = {}
+    hash['character'+index] = values
+    // 配列に入れる?
+    console.log(window.parent.screen.width);
+    this.setState(hash);
 
-    if ( members.length < 6 ) {
-      this.setState({ options: DATA['Members']});
-    } else {
-      this.setState({ options: [] });
-    }
-    this.setState({ members: members } );
-    before=0;
-    after=0;
-    match_bonus = 0;
-    member_values = [];
-    for (var i=0; i < members.length; i++) {
-      member_values.push(members[i]['value']);
-      if ( members[i].event_order == 0 ) {
-        before++;
-      } else {
-        after++;
-      }
-      if ( members[i].match_bonus ) {
-        match_bonus = match_bonus + 10;
-      }
-    }
-    this.setState( { before_event_count: before } );
-    this.setState( { after_event_count: after  } );
-    this.setState( { match_bonus: match_bonus } );
-    combos = [];
-    for (var i=0; i < DATA['Combos'].length; i++) {
-      combo = DATA['Combos'][i];
-      combo_members = Object.keys(combo['members']);
-      compare = [];
-      for (var j=0; j < combo_members.length; j++) {
-        index =  member_values.indexOf(combo_members[j])
-        if ( index != -1 ) {
-          compare.push(member_values[index]);
-        }
-      }
-      if ( combo_members.toString() == compare.toString() ) {
-        combos.push(combo);
-      }
-    }
-    this.setState({ combos: combos } );
+//    this.setState({ characters: this.state.characters[]})
   },
   render: function() {
-    return React.createElement("section", {className: "container"}, 
-    React.createElement(Filter, null), 
-    React.createElement("label", null, this.props.label), 
-    React.createElement(Select, {
-      onOptionLabelClick: this.onLabelClick, 
-      value: this.state.members, 
-      multi: true, 
-      noResultsText: "", 
-      placeholder: "イベキャラを選択してください", 
-      options: this.state.options, 
-      onChange: this.onChange}), 
-    React.createElement("section", {className: "combo"}, 
-       this.state.combos.length > 0 ? React.createElement("h3", {className: "headline"}, "コンボ発生") : '', 
-      this.state.combos.map(function(combo) {
-        return React.createElement("p", {className: "pure-alert pure-alert-error"}, combo.name);
-      })
-    ), 
-    React.createElement("section", {className: "option"}, 
-        React.createElement("span", {className: "pure-button before"}, 
-            "前イベ ", this.state.before_event_count
-        ), 
-        React.createElement("span", {className: "pure-button after"}, 
-            "後イベ ", this.state.after_event_count
-        ), 
-        React.createElement("div", null, 
-            React.createElement("a", {href: "http://pawapurolabo.tumblr.com/post/115213099093"}, "前イベ・後イベとは?")
-        )
-    ), 
-    React.createElement("section", {className: "option"}, 
-        React.createElement("span", {className: "pure-button match-bonus"}, 
-            "試合経験点ボーナス ",  this.state.match_bonus, " %"
-        )
-    ), 
-    React.createElement("section", {className: "event-character"}, 
-     this.state.members.length > 0  ? React.createElement("h3", {className: "headline"}, "イベントデッキ") : '', 
-    this.state.members.map(function(member) {
-      var memberClass = ClassNames(
-        'memberClass', 'pure-badge',
-        {
-          "male": member.type === 0 ,
-          "female": member.type === 1,
-          "girlfriend": member.type === 2,
-          "girlfriend-player": member.type === 3
-        }
-      );
-      var eventClass = ClassNames(
-        'pure-badge',
-        {
-          "before": member.event_order === 0,
-          "after":  member.event_order === 1
-        }
-      );
-      var traningClass = ClassNames(
-        "traning",
-        {
-          "pure-badge": member.traning,
-        }
-      );
-      var matchBonusClass = ClassNames(
-        "match-bonus",
-        {
-          "pure-badge": member.match_bonus,
-        }
-      );
-
-      var skillClass = ClassNames("skill" ,{
-        "pure-badge": member.skills.length > 0,
-      });
-      return React.createElement("div", {className: "pure-g result"}, 
-      React.createElement("div", {className: "pure-u-1-1"}, 
-      React.createElement("span", {className: memberClass}, member.label), 
-      React.createElement("span", {className: eventClass}, 
-        member.event_order === 0 ? "前イベ" : "後イベ"
+    number = 1
+    return React.createElement("div", null, 
+      React.createElement(Character, {
+         options: this.props.defaultCharacters, 
+         placeholder: "1人目のイベキャラを選択して下さい", 
+         onChange: this.changeCharacter, 
+         index: number}
       ), 
-      React.createElement("span", {className: matchBonusClass}, 
-        member.match_bonus ? '試合経験点10%' : ''
-      ), 
-      React.createElement("span", {className: traningClass}, 
-        member.traning
-      ), 
-      React.createElement("ul", null, 
-      member.skills.map(function(skill) {
-        return React.createElement("li", null, React.createElement("span", {className: skillClass}, skill));
-      })
-      ), 
-      React.createElement("ul", null, 
-      member.special_skills.map(function(special) {
-        return React.createElement("li", null, React.createElement("span", {className: "pure-badge special-skill"}, special));
-      })
-      )
-      )
-      )
-     }, this)
-    ), 
-    React.createElement("hr", null), 
-    React.createElement("section", {className: "pure-g hint"}, 
-        React.createElement("div", {className: "pure-u-1-1"}, 
-            React.createElement("div", null, 
-                React.createElement("span", {className: "pure-badge male"}, "男性"), 
-                React.createElement("span", {className: "pure-badge female"}, "女性"), 
-                React.createElement("span", {className: "pure-badge girlfriend"}, "彼女"), 
-                React.createElement("span", {className: "pure-badge girlfriend-player"}, "選手兼彼女")
-            ), 
-            React.createElement("div", null, 
-                React.createElement("span", {className: "pure-badge before"}, "前イベ"), 
-                React.createElement("span", {className: "pure-badge after"}, "後イベ"), 
-                React.createElement("span", {className: "pure-badge traning"}, "得意練習"), 
-                React.createElement("span", {className: "pure-badge skill"}, "練習コツ"), 
-                React.createElement("span", {className: "pure-badge special-skill"}, "金特・オリジナル変化球")
-            )
-        )
-    )
+    this.state.character1
     )
   }
 });
 
+
+/* var Filter = React.createClass({
+   propTypes:  {
+   searchable: true
+   },
+   getInitialState: function() {
+   return {
+   boy:           true,
+   girl:          true,
+   girlFriend:    true,
+   beforeEvent:   true,
+   afterEvent:    true,
+
+   }
+   },
+   onChange: function() {
+
+   },
+   render: function() {
+   return <div id="filter">
+   <h3>絞り込む</h3>
+   <ul>
+   <li>
+   <input className="pure-checkbox" type="checkbox" value={this.state.onChange} />男性
+   <input className="pure-checkbox" type="checkbox" value={this.state.onChange}/>女性
+   <input className="pure-checkbox" type="checkbox" value={this.state.onChange}/>彼女
+   </li>
+   <li>
+   <input className="pure-checkbox" type="checkbox"/>前イベ
+   <input className="pure-checkbox" type="checkbox"/>後イベ
+   </li>
+   <li>
+   特殊能力
+   <Select options={this.props.options} value='one'  searchable={this.props.searchable} />
+   </li>
+   <li>
+   金特 オリジナル変化球
+   <Select options={this.props.options} value='one'  searchable={this.props.searchable} />
+   </li>
+   <li>
+   得意練習
+   <Select options={this.props.options} value='one'  searchable={this.props.searchable} />
+   </li>
+   </ul>
+   </div>
+   }
+
+   });
+
+   var App = React.createClass({
+   getInitialState: function() {
+   return {
+   options: DATA['Members'],
+   members: [],
+   combos: [],
+   before_event_count: 0,
+   after_event_count:  0,
+   match_bonus: 0
+   };
+   },
+   onLabelClick: function (data, event) {
+   console.log(data);
+   },
+   onChange: function (value, members) {
+   exists = {};
+
+   if ( members.length < 6 ) {
+   this.setState({ options: DATA['Members']});
+   } else {
+   this.setState({ options: [] });
+   }
+   this.setState({ members: members } );
+   before=0;
+   after=0;
+   match_bonus = 0;
+   member_values = [];
+   for (var i=0; i < members.length; i++) {
+   member_values.push(members[i]['value']);
+   if ( members[i].event_order == 0 ) {
+   before++;
+   } else {
+   after++;
+   }
+   if ( members[i].match_bonus ) {
+   match_bonus = match_bonus + 10;
+   }
+   }
+   this.setState( { before_event_count: before } );
+   this.setState( { after_event_count: after  } );
+   this.setState( { match_bonus: match_bonus } );
+   combos = [];
+   for (var i=0; i < DATA['Combos'].length; i++) {
+   combo = DATA['Combos'][i];
+   combo_members = Object.keys(combo['members']);
+   compare = [];
+   for (var j=0; j < combo_members.length; j++) {
+   index =  member_values.indexOf(combo_members[j])
+   if ( index != -1 ) {
+   compare.push(member_values[index]);
+   }
+   }
+   if ( combo_members.toString() == compare.toString() ) {
+   combos.push(combo);
+   }
+   }
+   this.setState({ combos: combos } );
+   },
+   render: function() {
+   return <section className="container">
+   <Filter />
+   <label>{this.props.label}</label>
+   <Select
+   onOptionLabelClick={this.onLabelClick}
+   value={this.state.members}
+   multi={true}
+   noResultsText=""
+   placeholder="イベキャラを選択してください"
+   options={this.state.options}
+   onChange={this.onChange} />
+   <section className="combo">
+   { this.state.combos.length > 0 ? <h3 className="headline">コンボ発生</h3> : '' }
+   {this.state.combos.map(function(combo) {
+   return <p className="pure-alert pure-alert-error" >{combo.name}</p>;
+   })}
+   </section>
+   <section className="option">
+   <span className="pure-button before">
+   前イベ {this.state.before_event_count}
+   </span>
+   <span className="pure-button after">
+   後イベ {this.state.after_event_count}
+   </span>
+   <div>
+   <a href="http://pawapurolabo.tumblr.com/post/115213099093">前イベ・後イベとは?</a>
+   </div>
+   </section>
+   <section className="option">
+   <span className="pure-button match-bonus">
+   試合経験点ボーナス { this.state.match_bonus } %
+   </span>
+   </section>
+   <section className="event-character">
+   { this.state.members.length > 0  ? <h3 className="headline">イベントデッキ</h3> : '' }
+   {this.state.members.map(function(member) {
+   var memberClass = ClassNames(
+   'memberClass', 'pure-badge',
+   {
+   "male": member.type === 0 ,
+   "female": member.type === 1,
+   "girlfriend": member.type === 2,
+   "girlfriend-player": member.type === 3
+   }
+   );
+   var eventClass = ClassNames(
+   'pure-badge',
+   {
+   "before": member.event_order === 0,
+   "after":  member.event_order === 1
+   }
+   );
+   var traningClass = ClassNames(
+   "traning",
+   {
+   "pure-badge": member.traning,
+   }
+   );
+   var matchBonusClass = ClassNames(
+   "match-bonus",
+   {
+   "pure-badge": member.match_bonus,
+   }
+   );
+
+   var skillClass = ClassNames("skill" ,{
+   "pure-badge": member.skills.length > 0,
+   });
+   return <div className="pure-g result">
+   <div className="pure-u-1-1">
+   <span className={memberClass}>{member.label}</span>
+   <span className={eventClass}>
+   {member.event_order === 0 ? "前イベ" : "後イベ"}
+   </span>
+   <span className={matchBonusClass}>
+   {member.match_bonus ? '試合経験点10%' : ''}
+   </span>
+   <span className={traningClass}>
+   {member.traning}
+   </span>
+   <ul>
+   {member.skills.map(function(skill) {
+   return <li><span className={skillClass}>{skill}</span></li>;
+   })}
+   </ul>
+   <ul>
+   {member.special_skills.map(function(special) {
+   return <li><span className="pure-badge special-skill">{special}</span></li>;
+   })}
+   </ul>
+   </div>
+   </div>
+   }, this)}
+   </section>
+   <hr/>
+   <section className="pure-g hint">
+   <div className="pure-u-1-1">
+   <div>
+   <span className="pure-badge male">男性</span>
+   <span className="pure-badge female">女性</span>
+   <span className="pure-badge girlfriend">彼女</span>
+   <span className="pure-badge girlfriend-player">選手兼彼女</span>
+   </div>
+   <div>
+   <span className="pure-badge before">前イベ</span>
+   <span className="pure-badge after">後イベ</span>
+   <span className="pure-badge traning">得意練習</span>
+   <span className="pure-badge skill">練習コツ</span>
+   <span className="pure-badge special-skill">金特・オリジナル変化球</span>
+   </div>
+   </div>
+   </section>
+   </section>
+   }
+   }); */
+
 React.render(
-  React.createElement(App, null),
+  React.createElement(Characters, null),
   document.getElementById('app')
 );
 

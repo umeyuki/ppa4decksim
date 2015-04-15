@@ -15,6 +15,7 @@ var Character = React.createClass({
       type: React.PropTypes.number.isRequired,
       matchBonus: React.PropTypes.array
     }),
+    index:  React.PropTypes.number.isRequired,
     options: React.PropTypes.array.isRequired,
     placeholder: React.PropTypes.string.isRequired,
     searchable: React.PropTypes.bool.isRequired,
@@ -26,7 +27,7 @@ var Character = React.createClass({
     }
   },
   onChange: function(value, values) {
-    this.props.onChange(value, values);
+    this.props.onChange(this.props.index, values);
   },
   render: function() {
     return <div>
@@ -50,16 +51,30 @@ var Characters = React.createClass({
       defaultCharacters: DATA['Members']
     }
   },
-  changeCharacter: function(value, values) {
-    console.log(values);
+  getInitialState: function() {
+    return {
+      characters: [],
+    };
+  },
+  changeCharacter: function(index, values) {
+    hash = {}
+    hash['character'+index] = values
+    // 配列に入れる?
+    console.log(window.parent.screen.width);
+    this.setState(hash);
+
+//    this.setState({ characters: this.state.characters[]})
   },
   render: function() {
+    number = 1
     return <div>
       <Character
          options={this.props.defaultCharacters}
          placeholder='1人目のイベキャラを選択して下さい'
          onChange={this.changeCharacter}
+         index={number}
       />
+    {this.state.character1}
     </div>
   }
 });
