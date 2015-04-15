@@ -82,4 +82,4 @@ gulp.task('deploy', function() {
     .pipe(ghPages());
 });
 
-gulp.task('default', ['build', 'connect', 'watch']);
+gulp.task('default', ['build', 'concat', 'connect', 'watch']);

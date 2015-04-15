@@ -7,7 +7,6 @@ exports.Members =
     skills: ['フォーク', '対ピンチ', '打球反応'],
     special_skills: ['怪物球威'],
     event_order: 1,
-    girl_friend: false,
     type: 1,
     match_bonus: false
   },
@@ -245,7 +244,7 @@ exports.Members =
   },
   {
     label: 'ブロンコ=リー',
-    value: 'bronco=lie',
+    value: 'buronco=lie',
     traning: '精神',
     skills: ['チャンス', 'ケガしにくさ', '流し打ち', '粘り打ち', '意外性'],
     special_skills: ['アーチスト'],
@@ -615,7 +614,7 @@ exports.Members =
   },
   {
     label: '降谷暁',
-    value: 'furuyaakatuki',
+    value: 'furuyasatoru',
     traning: '球速',
     skills: ['重い球', '奪三振'],
     special_skills: ['怪童', '勝負師'],
@@ -633,4 +632,281 @@ exports.Members =
     type: 0,
     match_bonus: false
   }
+];
+
+exports.Combos =
+[
+  {
+    name: 'あこがれの大西さん',
+    members:
+    {
+      onishiharison: true,
+      arashimarushiro: true
+    }
+  },
+  {
+    name: '因縁',
+    members:
+    {
+      takimototaro: true,
+      hisakatarei: true
+    }
+  },
+  {
+    name: 'オレたちは双子じゃない',
+    members:
+    {
+      mitumorisakyo: true,
+      mitumoriukyo: true
+    }
+  },
+  {
+    name: '究極VS至高',
+    members:
+    {
+      tachibanamizuki: true,
+      rikudouhijiri: true
+    }
+  },
+  {
+	  name: '兄弟の事情',
+    members:
+    {
+      ikarimamoru: true,
+      ikarisusumu: true
+    }
+  },
+  {
+    name: 'ひまわりと月見草',
+    members:
+    {
+      shibutanihideki: true,
+      nakanoshimayukihiro: true
+    }
+  },
+  {
+    name: '野球vsソフトボール',
+    members:
+    {
+      bitochihiro: true,
+      kawahoshihomura: true
+    }
+  },
+  {
+    name: 'NGワード',
+    members:
+    {
+      hoshiisubaru: true,
+      saigayuto: true
+    }
+  },
+  {
+    name: 'エリートと秀才',
+    members:
+    {
+      hoshiisubaru: true,
+      karasumatakemitsu: true
+    }
+  },
+  {
+    name: 'クセモノズ',
+    members:
+    {
+      odagiritakumi: true,
+      kodairahinata: true
+    }
+  },
+  {
+    name: '意外な2人',
+    members:
+    {
+      udomikihisa: true,
+      karasumatakemitsu: true
+    }
+  },
+  {
+    name: '投手討論',
+    members:
+    {
+      hayakawaaoi: true,
+      tachikawahiromi: true
+    }
+  },
+  {
+    name: '猛特訓?',
+    members:
+    {
+      tomosawaryo: true,
+      hebishimakirito: true
+    }
+  },
+  {
+    name: 'アイツには負けない!',
+    members:
+    {
+      tomosawaryo: true,
+      ikarimamoru: true
+    }
+  },
+  {
+    name: '最強の特訓メニュー',
+    members:
+    {
+      tomosawaryo: true,
+      turuyamasaru: true
+    }
+  },
+  {
+    name: 'ストイックツー',
+    members:
+    {
+      tomosawaryo: true,
+      zenigataranzo: true
+    }
+  },
+  {
+    name: 'たこ燒きパーティー',
+    members:
+    {
+      abatayasushi: true,
+      tsukumotakaoki: true
+    }
+  },
+  {
+    name: 'リベラルな捕手',
+    members:
+    {
+      rikudouhijiri: true,
+      kodakamirei: true
+    }
+  },
+  {
+    name: 'ニコイチ',
+    members:
+    {
+      tachikawahiromi: true,
+      kodakamirei: true
+    }
+  },
+  {
+    name: 'トクベツな関係',
+    members:
+    {
+      bitochihiro: true,
+      kodakamirei: true
+    }
+  },
+  {
+    name: '美藤vsアンヌ',
+    members:
+    {
+      annu: true,
+      bitochihiro: true
+    }
+  },
+  {
+    name: 'ボケ合戦',
+    members:
+    {
+      akehoshisetuka: true,
+      hasshakumikoko: true
+    }
+  },
+  {
+    name: 'チャレンジ精神',
+    members:
+    {
+      akehoshisetuka: true,
+      misonochika: true
+    }
+  },
+  {
+    name: 'あばれ八尺と小旋風',
+    members:
+    {
+      koarashiryo: true,
+      hasshakumikoko: true
+    }
+  },
+  {
+    name: 'ケンカするほど仲がいい?',
+    members:
+    {
+      koarashiryo: true,
+      misonochika: true,
+    }
+  },
+  {
+    name: '女性という生き方',
+    members:
+    {
+      natunohimawari: true,
+      kodakamirei: true
+    }
+  },
+  {
+    name: 'スイーツ番長',
+    members:
+    {
+      natunohimawari: true,
+      yabetaakiko: true
+    }
+  },
+  {
+    name: 'テリブルトリオ',
+    members:
+    {
+      hayakawaaoi: true,
+      tachibanamizuki: true,
+      rikudouhijiri: true
+    }
+  },
+  {
+    name: 'セレブなレストラン',
+    members:
+    {
+      ikarimamoru: true,
+      ookanemochitaro: true,
+      tachibanamizuki: true
+    }
+  },
+  {
+    name: '憧れです!',
+    members:
+    {
+      annu: true,
+      tachikawahiromi: true,
+      hayakawaaoi: true
+    }
+  },
+  {
+    name: 'ハイパートレーニング',
+    members:
+    {
+      tomosawaryo: true,
+      charaigenki: true,
+      tachikawahiromi: true
+    }
+  },
+  {
+    name: '女子パワー',
+    members:
+    {
+      tachibanamizuki: true,
+      rikudouhijiri: true,
+      tachikawahiromi: true,
+      kodakamirei: true
+    }
+  },
+  {
+    name: 'みんなでビーチバレー',
+    members:
+    {
+      akehoshisetuka: true,
+      hasshakumikoko: true,
+      koarashiryo: true,
+      misonochika: true
+    }
+  }
+
 ];
