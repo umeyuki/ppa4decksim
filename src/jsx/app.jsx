@@ -31,7 +31,7 @@ var App = React.createClass({
     match_bonus = 0;
     member_values = [];
     for (var i=0; i < members.length; i++) {
-      member_values.push(members[i]['value']);
+      member_values.push(members[i]['symbol']);
       if ( members[i].event_order == 0 ) {
         before++;
       } else {
