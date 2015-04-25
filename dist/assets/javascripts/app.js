@@ -4,38 +4,55 @@ var React = require('react'),
 var DATA = require('./data.jsx');
 var ClassNames = require('classnames');
 
-var Filter = React.createClass({displayName: "Filter",
-  render: function() {
-    return React.createElement("section", null, 
-    React.createElement("div", null, 
-    React.createElement("input", {type: "checkbox", value: "", checked: "checked"}), " 男", 
-    React.createElement("input", {type: "checkbox", value: "", checked: "checked"}), " 女", 
-    React.createElement("input", {type: "checkbox", value: "", checked: "checked"}), " 彼女"
-    ), 
-    React.createElement("div", null, 
-    React.createElement(Select, {
-    option: [{ label:'label', value:'value'}], 
-    placeholder: "特殊能力で絞り込む"}
-    )
-    ), 
-    React.createElement("div", null, 
-    React.createElement(Select, {
-    option: [{ label:'label', value:'value'}], 
-    placeholder: "得意練習で絞り込む"}
-    )
-    ), 
-    React.createElement("div", null, 
-    "試合経験点", 
-    React.createElement("input", {type: "radio", value: "", checked: "checked"}), " あり", 
-    React.createElement("input", {type: "radio", value: ""}), " なし"
-    ), 
-    React.createElement("div", null, 
-    React.createElement("input", {type: "checkbox", value: "", checked: "checked"}), "前イベ", 
-    React.createElement("input", {type: "checkbox", value: "", checked: "checked"}), "後イベ"
-    )
-    );
-  }
-});
+// var Filter = React.createClass({
+//   getInitialState: function() {
+//     return {
+//       male: true,
+//       female: true,
+//       girlFriend: true
+//     };
+//   },
+//   changeMale: function(e) {
+//     console.log(e.target.checked);
+//     this.setState({male: e.target.checked});
+//   },
+//   render: function() {
+//     return <section>
+//     <div>
+//     <input type="checkbox" value={this.state.male} onChange={this.changeMale} checked={this.state.male}/> 男
+//     <input type="checkbox" value="" checked="checked"/> 女
+//     <input type="checkbox" value="" checked="checked"/> 彼女
+//     </div>
+//     <div>
+//     <Select
+//     option={[{ label:'label', value:'value'}]}
+//     placeholder="ポジションで絞り込む"
+//     />
+//     </div>
+//     <div>
+//     <Select
+//     option={[{ label:'label', value:'value'}]}
+//     placeholder="特殊能力で絞り込む"
+//     />
+//     </div>
+//     <div>
+//     <Select
+//     option={[{ label:'label', value:'value'}]}
+//     placeholder="得意練習で絞り込む"
+//     />
+//     </div>
+//     <div>
+//     試合経験点
+//     <input type="radio" value="" checked="checked"/> あり
+//     <input type="radio" value="" /> なし
+//     </div>
+//     <div>
+//     <input type="checkbox" value="" checked="checked"/>前イベ
+//     <input type="checkbox" value="" checked="checked"/>後イベ
+//     </div>
+//     </section>;
+//   }
+// });
 
 var Character = React.createClass({displayName: "Character",
   propTypes: {
@@ -57,11 +74,21 @@ var Character = React.createClass({displayName: "Character",
   },
   getDefaultProps: function() {
     return {
-      searchable: true
+      searchable: true,
+      selectValue: null
     };
   },
-  onChange: function(value, values) {
-    this.props.onChange(this.props.index, values);
+  getInitialState: function() {
+    return {
+      selectValue: null
+    };
+  },
+  // onChange: function(value, values) {
+  //
+  // },
+  updateValue: function(value, values) {
+    this.setState({selectValue: value});
+    this.props.onChange(this.props.index, value, values);
   },
   render: function() {
     return React.createElement("div", null, 
@@ -69,7 +96,8 @@ var Character = React.createClass({displayName: "Character",
        options: this.props.options, 
        searchable: this.props.searchable, 
        placeholder: this.props.placeholder, 
-       onChange: this.onChange}
+       value: this.state.selectValue, 
+       onChange: this.updateValue}
     )
 
     );
@@ -86,7 +114,6 @@ var Characters = React.createClass({displayName: "Characters",
     };
   },
   filter: function(args) {
-    console.log(args);
     return this.props.defaultCharacters;;
   },
   getInitialState: function() {
@@ -97,15 +124,15 @@ var Characters = React.createClass({displayName: "Characters",
       hoge: 1
     };
   },
-  changeCharacter: function(index, values) {
+  changeCharacter: function(index, value, values) {
     hash = {};
-    hash['character'+index] = values;
+    hash['character'+ index] = values;
     this.setState(hash);
   },
   render: function() {
     number = 1;
     return React.createElement("div", null, 
-    React.createElement(Filter, null), 
+
     React.createElement(Character, {
     options: this.filter(this.state.hoge), 
     placeholder: "1人目のイベキャラを選択して下さい", 
