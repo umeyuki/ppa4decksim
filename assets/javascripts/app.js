@@ -33741,12 +33741,61 @@ exports.Members =
   {
     label: 'パピヨン',
     value: 'パピヨン',
+    symbol: 'papiyon',
     traning: 'コントロール',
     skills: ['ノビ'],
     special_skills: ['怪童'],
     event_order: 1,
     type: 0,
     match_bonus: false
+  },
+  {
+    label: '轟雷市',
+    value: '轟雷市',
+    symbol: 'todorokiraichi',
+    traning: '筋力',
+    skills: ['対エース', 'ムード', '初級', '粘り打ち', '広角打法', 'パワーヒッター'],
+    special_skills: ['アーチスト'],
+    event_order: 1,
+    type: 0,
+    match_bonus: true,
+    position: 'third'
+  },
+  {
+    label: '真田俊平',
+    value: '真田俊平',
+    symbol: 'sanadashunpei',
+    traning: '球速',
+    skills: ['キレ', '打たれ強さ', '勝ち運', '闘志'],
+    special_skills: ['恐怖の満塁男', '強心臓'],
+    event_order: 0,
+    type: 0,
+    match_bonus: false,
+    position: 'pitcher'
+  },
+  {
+    label: '三島優太',
+    value: '三島優太',
+    symbol: 'mishimayuta',
+    traning: 'スタミナ',
+    skills: ['重い球', '打たれ強さ', '闘志', '対ピンチ'],
+    special_skills: ['勝負師'],
+    event_order: 1,
+    type: 0,
+    match_bonus: false,
+    position: 'pitcher'
+  },
+  {
+    label: '秋葉一真',
+    value: '秋葉一真',
+    symbol: 'akibakazuma',
+    traning: '打撃',
+    skills: ['アベレージヒッター'],
+    special_skills: ['ストライク送球', '走者釘付'],
+    event_order: 0,
+    type: 0,
+    match_bonus: false,
+    position: 'catcher'
   }
 ];
 
