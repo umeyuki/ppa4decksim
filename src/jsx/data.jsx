@@ -742,9 +742,7 @@ exports.Characters =
     type: 0,
     match_bonus: false,
     position: 'catcher'
-  },
-
-
+  }
 ];
 
 exports.Combos =

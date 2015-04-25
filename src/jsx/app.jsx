@@ -3,6 +3,39 @@ var React = require('react'),
 var DATA = require('./data.jsx');
 var ClassNames = require('classnames');
 
+var Filter = React.createClass({
+  render: function() {
+    return <section>
+    <div>
+    <input type="checkbox" value="" checked="checked"/> 男
+    <input type="checkbox" value="" checked="checked"/> 女
+    <input type="checkbox" value="" checked="checked"/> 彼女
+    </div>
+    <div>
+    <Select
+    option={[{ label:'label', value:'value'}]}
+    placeholder="特殊能力で絞り込む"
+    />
+    </div>
+    <div>
+    <Select
+    option={[{ label:'label', value:'value'}]}
+    placeholder="得意練習で絞り込む"
+    />
+    </div>
+    <div>
+    試合経験点
+    <input type="radio" value="" checked="checked"/> あり
+    <input type="radio" value="" /> なし
+    </div>
+    <div>
+    <input type="checkbox" value="" checked="checked"/>前イベ
+    <input type="checkbox" value="" checked="checked"/>後イベ
+    </div>
+    </section>;
+  }
+});
+
 var Character = React.createClass({
   propTypes: {
     character: React.PropTypes.shape({
@@ -24,7 +57,7 @@ var Character = React.createClass({
   getDefaultProps: function() {
     return {
       searchable: true
-    }
+    };
   },
   onChange: function(value, values) {
     this.props.onChange(this.props.index, values);
@@ -38,7 +71,7 @@ var Character = React.createClass({
        onChange={this.onChange}
     />
 
-    </div>
+    </div>;
   }
 });
 
@@ -48,32 +81,36 @@ var Characters = React.createClass({
   },
   getDefaultProps: function() {
     return {
-      defaultCharacters: DATA['Members']
-    }
+      defaultCharacters: DATA['Characters']
+    };
+  },
+  filter: function(args) {
+    console.log(args);
+    return this.props.defaultCharacters;;
   },
   getInitialState: function() {
+    characters = [];
+    characters = this.props.defaultCharacters;
     return {
-      characters: [],
+      selectableCharacters: characters,
+      hoge: 1
     };
   },
   changeCharacter: function(index, values) {
-    hash = {}
-    hash['character'+index] = values
-    // 配列に入れる?
-    console.log(window.parent.screen.width);
+    hash = {};
+    hash['character'+index] = values;
     this.setState(hash);
-
-//    this.setState({ characters: this.state.characters[]})
   },
   render: function() {
-    number = 1
+    number = 1;
     return <div>
-      <Character
-         options={this.props.defaultCharacters}
-         placeholder='1人目のイベキャラを選択して下さい'
-         onChange={this.changeCharacter}
-         index={number}
-      />
+    <Filter />
+    <Character
+    options={this.filter(this.state.hoge)}
+    placeholder='1人目のイベキャラを選択して下さい'
+    onChange={this.changeCharacter}
+    index={number}
+    />
     {this.state.character1}
     </div>
   }
@@ -131,7 +168,7 @@ var Characters = React.createClass({
    var App = React.createClass({
    getInitialState: function() {
    return {
-   options: DATA['Members'],
+   options: DATA['Characters'],
    members: [],
    combos: [],
    before_event_count: 0,
@@ -146,7 +183,7 @@ var Characters = React.createClass({
    exists = {};
 
    if ( members.length < 6 ) {
-   this.setState({ options: DATA['Members']});
+   this.setState({ options: DATA['Characters']});
    } else {
    this.setState({ options: [] });
    }
