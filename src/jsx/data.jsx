@@ -1,4 +1,4 @@
-exports.Members =
+exports.Characters =
 [
   {
     label: 'アンヌ',
@@ -8,7 +8,8 @@ exports.Members =
     special_skills: ['怪物球威'],
     event_order: 1,
     type: 1,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label: '明星雪華',
@@ -19,7 +20,8 @@ exports.Members =
     event_order: 1,
     girl_friend: true,
     type: 2,
-    match_bonus: false
+    match_bonus: false,
+    position: 'manager'
   },
   {
     label: '阿畑やすし',
@@ -29,7 +31,8 @@ exports.Members =
     special_skills: ['オリジナル変化球'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label: '猪狩進',
@@ -39,7 +42,8 @@ exports.Members =
     special_skills: ['球界の頭脳'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'catcher'
   },
   {
     label: '猪狩守',
@@ -49,7 +53,8 @@ exports.Members =
     special_skills: ['ライジングキャノン', 'or','ライジングショット'],
     event_order: 1,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label: '大鐘餅太郎',
@@ -59,7 +64,8 @@ exports.Members =
     special_skills: ['左キラー'],
     event_order: 1,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'outfielder'
   },
   {
     label: '橘みずき',
@@ -69,7 +75,8 @@ exports.Members =
     special_skills: ['クレッセントムーン'],
     event_order: 0,
     type: 1,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label:  '早川あおい',
@@ -79,7 +86,8 @@ exports.Members =
     special_skills: ['マリンボール'],
     event_order: 1,
     type: 1,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label: '六道聖',
@@ -89,7 +97,8 @@ exports.Members =
     special_skills: ['ささやき戦術'],
     event_order: 1,
     type: 1,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'catcher'
   },
   {
     label: '山口賢',
@@ -99,7 +108,8 @@ exports.Members =
     special_skills: ['強新三'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label: '鈴本大輔',
@@ -109,7 +119,8 @@ exports.Members =
     special_skills: ['精密機械'],
     event_order: 0,
     type: 0,
-    match_bonus: true
+    match_bonus: true,
+    positioin: 'pitcher'
   },
   {
     label: '滝本太郎',
@@ -119,7 +130,8 @@ exports.Members =
     special_skills: ['アーチスト','or', '安打製造機'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'first'
   },
   {
     label: '青葉春人',
@@ -129,7 +141,8 @@ exports.Members =
     special_skills: ['超真魔球改'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label: '佐久間博',
@@ -139,8 +152,8 @@ exports.Members =
     special_skills: ['芸術的流し打ち'],
     event_order: 1,
     type: 0,
-    match_bonus: true
-
+    match_bonus: true,
+    position: 'short'
   },
   {
     label: '樽本有太',
@@ -150,7 +163,8 @@ exports.Members =
     special_skills: ['怪物球威'],
     event_order: 1,
     type: 0,
-    match_bonus: 1
+    match_bonus: true,
+    positioin: 'pitcher'
   },
   {
     label: '友沢亮',
@@ -160,7 +174,8 @@ exports.Members =
     special_skills: ['安打製造機'],
     event_order: 1,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'short'
   },
   {
     label: '蛇島桐人',
@@ -170,7 +185,8 @@ exports.Members =
     special_skills: ['魔術師'],
     event_order: 1,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'second'
   },
   {
     label: '矢部田亜希子',
@@ -180,7 +196,8 @@ exports.Members =
     special_skills: ['切り込み隊長'],
     event_order: 1,
     type: 1,
-    match_bonus: false
+    match_bonus: false,
+    position: 'outfielder'
   },
   {
     label: '美藤千尋',
@@ -190,7 +207,8 @@ exports.Members =
     special_skills: ['安打製造機'],
     event_order: 1,
     type: 1,
-    match_bonus: false
+    match_bonus: false,
+    position: 'outfielder'
   },
   {
     label: '川星ほむら',
@@ -200,7 +218,8 @@ exports.Members =
     special_skills: ['気迫ヘッド'],
     event_order: 0,
     type: 1,
-    match_bonus: false
+    match_bonus: false,
+    position: 'first'
   },
   {
     label: '武秀英',
@@ -210,7 +229,8 @@ exports.Members =
     special_skills: ['勝負師'],
     event_order: 1,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'first'
   },
   {
     label: '三森右京',
@@ -220,7 +240,8 @@ exports.Members =
     special_skills: ['電光石火'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'outfielder'
   },
   {
     label: '三森左京',
@@ -230,7 +251,8 @@ exports.Members =
     special_skills: ['高速ベースラン'],
     event_order: 1,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'outfielder'
   },
   {
     label: '浜崎庄司',
@@ -240,7 +262,8 @@ exports.Members =
     special_skills: ['不屈の魂'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label: 'ブロンコ=リー',
@@ -250,7 +273,8 @@ exports.Members =
     special_skills: ['アーチスト'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'second'
   },
   {
     label: '夏野向日葵',
@@ -260,7 +284,8 @@ exports.Members =
     special_skills: ['ストレート送球'],
     event_order: 1,
     type: 1,
-    match_bonus: true
+    match_bonus: true,
+    position: 'first'
   },
   {
     label: '星井スバル',
@@ -270,17 +295,19 @@ exports.Members =
     special_skills: ['スタードライブ'],
     event_order: 0,
     type: 0,
-    match_bonus: true
+    match_bonus: true,
+    positioin: 'pitcher'
   },
   {
-    label: '宇度幹久',
+    label: '宇渡幹久',
     value: 'udomikihisa',
     traning: '筋力',
     skills: ['パワーヒッター'],
     special_skills: ['強心臓', '重戦車'],
     event_order: 1,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'first'
   },
   {
     label: '小田切巧',
@@ -290,7 +317,8 @@ exports.Members =
     special_skills: ['代打の神様', '不屈の精神'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'short'
   },
   {
     label: '京野小筆',
@@ -300,7 +328,8 @@ exports.Members =
     special_skills: ['アーチスト', '安打製造機', '鉄腕', '精密機械'],
     event_order: 0,
     type: 2,
-    match_bonus: false
+    match_bonus: false,
+    position: 'manager'
   },
   {
     label: '才賀侑人',
@@ -310,7 +339,8 @@ exports.Members =
     special_skills: ['一球入魂'],
     event_order: 1,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'third'
   },
   {
     label: '烏丸剛充',
@@ -320,7 +350,8 @@ exports.Members =
     special_skills: ['不屈の魂'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label: '春野千優',
@@ -330,17 +361,19 @@ exports.Members =
     special_skills: ['鉄人', '走者釘付'],
     event_order: 1,
     type: 2,
-    match_bonus: false
+    match_bonus: false,
+    position: 'manager'
   },
   {
     label: '田中将大',
     value: 'tanakamasahiro',
     traning: '球速',
-    skills: ['ピンチ', '尻上がり', '打たれ強さ', 'ノビ', 'キレ', '逃げ球', '奪三振', '打球反応', '勝ち運', '闘志', '威圧感'],
+    skills: ['ピンチ', '尻上がり', '打たれ強さ', 'ノビ', 'キレ', '逃げ球', '奪三振', '打球反応', '勝ち運', '闘志',],
     special_skills: ['エアロスプリット'],
     event_order: 1,
     type: 0,
-    match_bonus: true
+    match_bonus: true,
+    positioin: 'pitcher'
   },
   {
     label: '美園千花',
@@ -350,7 +383,9 @@ exports.Members =
     special_skills: ['球界の頭脳'],
     event_order: 1,
     type: 3,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'catcher'
+
   },
   {
     label: '小嵐リョウ',
@@ -360,7 +395,8 @@ exports.Members =
     special_skills: ['魔術師'],
     event_order: 0,
     type: 3,
-    match_bonus: false
+    match_bonus: false,
+    position: 'short'
   },
   {
     label: '八尺巫女子',
@@ -370,7 +406,8 @@ exports.Members =
     special_skills: ['切り込み隊長'],
     event_order: 0,
     type: 3,
-    match_bonus: false
+    match_bonus: false,
+    position: 'outfielder'
   },
   {
     label: '大西=ハリソン',
@@ -380,7 +417,8 @@ exports.Members =
     special_skills: ['鉄椀'],
     event_order: 1,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label: '銭形乱蔵',
@@ -390,7 +428,8 @@ exports.Members =
     special_skills: ['強心臓'],
     event_order: 1,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label: '鋼毅',
@@ -400,17 +439,19 @@ exports.Members =
     special_skills: ['怪童', 'アーチスト'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label: '嵐丸士郎',
     value: 'arashimarushiro',
     traning: '精神',
     skills: ['対強打者'],
-    special_skills: ['鉄人'],
+    special_skills: ['鉄人','鉄腕'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label: '久方怜',
@@ -420,7 +461,8 @@ exports.Members =
     special_skills: ['脅威の切れ味'],
     event_order: 1,
     type: 0,
-    match_bonus: true
+    match_bonus: true,
+    positioin: 'pitcher'
   },
   {
     label: '鶴屋勝',
@@ -430,7 +472,8 @@ exports.Members =
     special_skills: ['本塁打厳禁'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label: '太刀川広巳',
@@ -440,7 +483,8 @@ exports.Members =
     special_skills: ['怪物脅威'],
     event_order: 1,
     type: 1,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label: '小平陽向',
@@ -450,7 +494,8 @@ exports.Members =
     special_skills: ['切り込み隊長'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'second'
   },
   {
     label: '茶来元気',
@@ -460,7 +505,8 @@ exports.Members =
     special_skills: ['切り込み隊長'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'second'
   },
   {
     label: '鮫島条太郎',
@@ -470,7 +516,8 @@ exports.Members =
     special_skills: ['一球入魂'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'third'
   },
   {
     label: '小豪月剛',
@@ -480,7 +527,8 @@ exports.Members =
     special_skills: ['ドクターK', '一球入魂'],
     event_order: 1,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'third'
   },
   {
     label: '中之島幸宏',
@@ -490,7 +538,8 @@ exports.Members =
     special_skills: ['電光石火'],
     event_order: 1,
     type: 0,
-    match_bonus: true
+    match_bonus: true,
+    position: 'short'
   },
   {
     label: '田中山太郎',
@@ -500,7 +549,8 @@ exports.Members =
     special_skills: ['魔術師'],
     event_order: 1,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'short'
   },
   {
     label: '有村佐治',
@@ -510,7 +560,8 @@ exports.Members =
     special_skills: ['鉄人'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'catcher'
   },
   {
     label: '香本富久雄',
@@ -520,7 +571,8 @@ exports.Members =
     special_skills: ['鉄の壁'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'catcher'
   },
   {
     label: '小鷹美麗',
@@ -530,7 +582,8 @@ exports.Members =
     special_skills: ['ストライク送球'],
     event_order: 0,
     type: 1,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'catcher'
   },
   {
     label: '矢部明雄',
@@ -540,7 +593,8 @@ exports.Members =
     special_skills: ['高速ベースラン'],
     event_order: 1,
     type: 0,
-    match_bonus: true
+    match_bonus: true,
+    position: 'outfielder'
   },
   {
     label: '猛田慶次',
@@ -550,7 +604,8 @@ exports.Members =
     special_skills: ['勝負師'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'outfielder'
   },
   {
     label: '渋谷秀喜',
@@ -560,7 +615,8 @@ exports.Members =
     special_skills: ['伝説のサヨナラ男'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'outfielder'
   },
   {
     label: '鎌刈善二',
@@ -570,7 +626,8 @@ exports.Members =
     special_skills: ['一球入魂'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'outfielder'
   },
   {
     label: '城井伯斎',
@@ -580,7 +637,8 @@ exports.Members =
     special_skills: ['切り込み隊長', '不屈の精神'],
     event_order: 1,
     type: 0,
-    match_bonus: true
+    match_bonus: true,
+    position: 'outfielder'
   },
   {
     label: '九十九宇宙',
@@ -590,7 +648,8 @@ exports.Members =
     special_skills: ['高速レーザー'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    position: 'outfielder'
   },
   {
     label: '沢村栄純',
@@ -600,17 +659,19 @@ exports.Members =
     special_skills: ['変幻自在', '左キラー'],
     event_order: 1,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label: '御幸一也',
     value: 'miyukikazuya',
     traning: '守備',
-    skills: ['肩力', 'キャッチャー'],
+    skills: ['肩力', 'キャッチャー', 'チャンス', '送球', '意外性'],
     special_skills: ['球界の頭脳', '走者釘付け'],
     event_order: 1,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'catcher'
   },
   {
     label: '降谷暁',
@@ -620,7 +681,8 @@ exports.Members =
     special_skills: ['怪童', '勝負師'],
     event_order: 0,
     type: 0,
-    match_bonus: false
+    match_bonus: false,
+    positioin: 'pitcher'
   },
   {
     label: '小湊春市',
@@ -630,8 +692,59 @@ exports.Members =
     special_skills: ['安打製造機', '本塁打厳禁'],
     event_order: 0,
     type: 0,
-    match_bonus: false
-  }
+    match_bonus: false,
+    position: 'second'
+  },
+  {
+    label: '轟雷市',
+    value: '轟雷市',
+    symbol: 'todorokiraichi',
+    traning: '筋力',
+    skills: ['対エース', 'ムード', '初級', '粘り打ち', '広角打法', 'パワーヒッター'],
+    special_skills: ['アーチスト'],
+    event_order: 1,
+    type: 0,
+    match_bonus: true,
+    position: 'third'
+  },
+  {
+    label: '真田俊平',
+    value: '真田俊平',
+    symbol: 'sanadashunpei',
+    traning: '球速',
+    skills: ['キレ', '打たれ強さ', '勝ち運', '闘志'],
+    special_skills: ['恐怖の満塁男', '強心臓'],
+    event_order: 0,
+    type: 0,
+    match_bonus: false,
+    position: 'pitcher'
+  },
+  {
+    label: '三島優太',
+    value: '三島優太',
+    symbol: 'mishimayuta',
+    traning: 'スタミナ',
+    skills: ['重い球', '打たれ強さ', '闘志', '対ピンチ'],
+    special_skills: ['勝負師'],
+    event_order: 1,
+    type: 0,
+    match_bonus: false,
+    position: 'pitcher'
+  },
+  {
+    label: '秋葉一真',
+    value: '秋葉一真',
+    symbol: 'akibakazuma',
+    traning: '打撃',
+    skills: ['アベレージヒッター'],
+    special_skills: ['ストライク送球', '走者釘付'],
+    event_order: 0,
+    type: 0,
+    match_bonus: false,
+    position: 'catcher'
+  },
+
+
 ];
 
 exports.Combos =
