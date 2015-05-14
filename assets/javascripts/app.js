@@ -33796,7 +33796,56 @@ exports.Members =
     type: 0,
     match_bonus: false,
     position: 'catcher'
+  },
+  {
+    label: '成宮鳴',
+    value: '秋葉一真',
+    symbol: 'narimiyamei',
+    traning: '球速',
+    skills: ['対ピンチ', 'キレ', '奪三振', '勝ち運', '対強打者', '打たれ強さ', '悪球打ち'],
+    special_skills: ['ドクターK', '伝説のサヨナラ男'],
+    event_order: 1,
+    type: 0,
+    match_bonus: true,
+    position: 'pitcher'
+  },
+  {
+    label: '多田野樹',
+    value: '多田野樹',
+    symbol: 'tatanoitsuki',
+    traning: '精神',
+    skills: ['キャッチャー'],
+    special_skills: ['不屈の魂', '鉄の壁', '気迫ヘッド'],
+    event_order: 1,
+    type: 0,
+    match_bonus: false,
+    position: 'catcher'
+  },
+  {
+    label: '白河勝之',
+    value: '白河勝之',
+    symbol: 'sirokawakatsunori',
+    traning: '打撃',
+    skills: ['バント', '粘り打ち'],
+    special_skills: ['芸術的流し打ち', '本塁打厳禁' ],
+    event_order: 0,
+    type: 0,
+    match_bonus: false,
+    position: 'short'
+  },
+  {
+    label: '神谷カルロス',
+    value: '神谷カルロス',
+    symbol: 'kamiyakarurosu',
+    traning: '走塁',
+    skills: ['盗塁', 'バント', '守備職人', '走塁', '内野安打', 'チャンスメーカー'],
+    special_skills: ['高速ベースラン'],
+    event_order: 0,
+    type: 0,
+    match_bonus: false,
+    position: 'outfielder'
   }
+
 ];
 
 exports.Combos =
